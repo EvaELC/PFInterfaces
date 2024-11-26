@@ -93,8 +93,9 @@ body {
 
 /* Estilos de la sección principal */
 .home {
-    text-align: center;
+    text-align: right;
     background-color: #FF4500;
+    background-image: url("/images/background.jpeg");
     background-size: cover;
     color: white;
     padding: 50px;
@@ -104,6 +105,26 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 100px; 
+}
+
+.home {
+    text-align: right; /* Alinea el texto al lado izquierdo */
+    background-color: #FF4500;
+    background-image: url("/images/background.jpeg");
+    background-size: cover;
+    color: white;
+    height: 80vh; /* Ocupa el 80% del alto de la pantalla */
+    display: flex; /* Flexbox para centrar elementos */
+    flex-direction: column; /* Elementos organizados verticalmente */
+    justify-content: center; /* Centrado vertical */
+    align-items: flex-end; /* Alinea elementos al lado izquierdo */
+    padding-left: 10%; /* Espaciado desde el lado izquierdo */
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column; /* Elementos organizados verticalmente */
+    gap: 20px; /* Espaciado entre los elementos */
 }
 
 
@@ -125,7 +146,7 @@ p {
 
 
 button {
-    background-color: #FF4500;
+    background-color: #006400;
     color: white;
     border: none;
     padding: 20px 40px;
@@ -137,6 +158,118 @@ button {
 }
 
 button:hover {
-    background-color: #FF6347;
+    background-color: #004d00;
     transform: scale(1.05);
+}
+
+
+/* Popups y modales */
+.popup, .profile-popup, .modal {
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.popup-content, .profile-popup-content, .modal-content {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2, .profile-popup h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-container, #modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup button, .profile-popup button, .modal button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 45%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.popup button, .profile-popup button {
+    background-color: #195c25; 
+    color: white;
+}
+
+.popup button:hover, .profile-popup button:hover {
+    background-color: #113d19; /
+    transform: scale(1.05);
+}
+
+#login-cancel, #cancel-profile {
+    background-color: #f44336; 
+}
+
+#login-cancel:hover, #cancel-profile:hover {
+    background-color: #d32f2f;
+}
+
+#save-profile {
+    background-color: #0e5211; 
+}
+
+#save-profile:hover {
+    background-color: #0a3b0c;
+}
+
+#modal-cancel {
+    background-color: #f44336;
+}
+
+#modal-cancel:hover {
+    background-color: #d32f2f; 
+}
+
+#modal-confirm {
+    background-color: #0e5211; 
+}
+
+#modal-confirm:hover {
+    background-color: #0a3b0c;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f44336; 
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irish Grover Demo</title>
+    <title>MI PA NOEL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
@@ -16,10 +16,10 @@
             <img src="images/logo.png" alt="Logo" class="logo-img">
         </div>
         <ul class="navbar-links">
-            <li><a href="#mapa-icono"><img src="images/mapa-icono.png" alt="Mapa" class="icon"> Mapa</a></li>
-            <li><a href="#historia-icono"><img src="images/historia-icono.png" alt="Historia" class="icon"> Historia</a></li>
-            <li><a href="#carta-icono"><img src="images/carta-icono.png" alt="Carta" class="icon"> Carta</a></li>
-            <li><a href="#minijuegos-icono"><img src="images/minijuegos-icono.png" alt="Minijuegos" class="icon"> Minijuegos</a></li>
+            <li><a href="#mapa"><img src="images/mapa-icono.png" alt="Mapa" class="icon"> Mapa</a></li>
+            <li><a href="#historia"><img src="images/historia-icono.png" alt="Historia" class="icon"> Historia</a></li>
+            <li><a href="#carta"><img src="images/carta-icono.png" alt="Carta" class="icon"> Carta</a></li>
+            <li><a href="#minijuegos"><img src="images/minijuegos-icono.png" alt="Minijuegos" class="icon"> Minijuegos</a></li>
         </ul>
         <div class="auth-buttons">
             <a href="#sign-in" class="auth-btn">Iniciar sesión</a>
@@ -32,6 +32,65 @@
         <h1>VIAJE DE PAPÁ NOEL</h1>
         <p id="countdown">¿Cuánto falta?</p>
         <button id="start-button">¡Comenzar!</button>
+    </div>
+
+
+    <!-- Popup de Inicio de Sesión -->
+    <div id="login-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="close-login-popup">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form" novalidate>
+                <label for="login-username">Nombre de usuario*:</label>
+                <input type="text" id="login-username" required><br>
+
+                <label for="login-password">Contraseña*:</label>
+                <input type="password" id="login-password" required><br>
+
+                <div class="button-container">
+                    <button type="submit" id="login-submit">Entrar</button>
+                    <button type="button" id="login-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal para confirmación y mensajes -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-message"></p>
+            <div id="modal-buttons">
+                <button id="modal-confirm">Aceptar</button>
+                <button id="modal-cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup de Registro -->
+    <div id="profile-popup" class="profile-popup">
+        <div class="profile-popup-content">
+            <span id="close-profile-popup" class="close">&times;</span>
+            <h2>Mi Perfil</h2>
+            <form id="profile-form">
+                <label for="profile-username">Nombre de Usuario:</label>
+                <input type="text" id="profile-username">
+
+                <label for="profile-email">Correo Electrónico:</label>
+                <input type="email" id="profile-email">
+    
+                <label for="profile-password">Contraseña:</label>
+                <input type="password" id="profile-password">
+    
+                <label for="profile-confirm-password">Confirmar Contraseña:</label>
+                <input type="password" id="profile-confirm-password">
+    
+                <label for="profile-country">País:</label>
+                <input type="text" id="profile-country">
+
+                <button type="button" id="save-profile">Entrar</button>
+                <button type="button" id="cancel-profile">Cancelar</button>
+            </form>
+        </div>
     </div>
 
     <script defer src="script.js"></script>

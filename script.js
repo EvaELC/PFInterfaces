@@ -35,3 +35,62 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${days} días ${hours} ${hourText} ${min} minutos ${sec} segundos`;
     }
 });
+
+// Obtener los elementos
+const loginPopup = document.getElementById('login-popup');
+const openLoginBtn = document.querySelector('.auth-btn[href="#sign-in"]'); // El botón de "Iniciar sesión"
+const closeLoginBtn = document.getElementById('close-login-popup');
+const cancelLoginBtn = document.getElementById('login-cancel');
+
+// Mostrar el popup cuando se hace clic en "Iniciar sesión"
+openLoginBtn.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevenir la acción por defecto del enlace
+    loginPopup.style.display = 'flex'; // Mostrar el popup
+});
+
+// Cerrar el popup cuando se hace clic en el botón de cerrar
+closeLoginBtn.addEventListener('click', function() {
+    loginPopup.style.display = 'none'; // Ocultar el popup
+});
+
+// Cerrar el popup cuando se hace clic en el botón de cancelar
+cancelLoginBtn.addEventListener('click', function() {
+    loginPopup.style.display = 'none'; // Ocultar el popup
+});
+
+// Cerrar el popup si se hace clic fuera del área del popup (opcional)
+window.addEventListener('click', function(event) {
+    if (event.target === loginPopup) {
+        loginPopup.style.display = 'none'; // Ocultar el popup si el clic es fuera del contenido
+    }
+});
+
+
+// Obtener los elementos
+const profilePopup = document.getElementById('profile-popup');
+const openProfileBtn = document.querySelector('.auth-btn[href="#reg"]'); // El botón de "Registrarse"
+const closeProfileBtn = document.getElementById('close-profile-popup');
+const cancelProfileBtn = document.getElementById('cancel-profile');
+
+// Mostrar el popup cuando se hace clic en "Registrarse"
+openProfileBtn.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevenir la acción por defecto del enlace
+    profilePopup.style.display = 'flex'; // Mostrar el popup
+});
+
+// Cerrar el popup cuando se hace clic en el botón de cerrar
+closeProfileBtn.addEventListener('click', function() {
+    profilePopup.style.display = 'none'; // Ocultar el popup
+});
+
+// Cerrar el popup cuando se hace clic en el botón de cancelar
+cancelProfileBtn.addEventListener('click', function() {
+    profilePopup.style.display = 'none'; // Ocultar el popup
+});
+
+// Cerrar el popup si se hace clic fuera del área del popup (opcional)
+window.addEventListener('click', function(event) {
+    if (event.target === profilePopup) {
+        profilePopup.style.display = 'none'; // Ocultar el popup si el clic es fuera del contenido
+    }
+});
