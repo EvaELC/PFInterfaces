@@ -36,29 +36,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Comportamiento del popup de inicio de sesión
-const loginPopup = document.getElementById('login-popup');
-const openLoginBtn = document.querySelector('.auth-btn[href="#sign-in"]'); 
-const closeLoginBtn = document.getElementById('close-login-popup');
-const cancelLoginBtn = document.getElementById('login-cancel');
+document.addEventListener('DOMContentLoaded', () => {
+    const loginPopup = document.getElementById('login-popup');
+    const openLoginBtn = document.querySelector('.auth-btn[href="#sign-in"]');
+    const closeLoginBtn = document.getElementById('close-login-popup');
+    const cancelLoginBtn = document.getElementById('login-cancel');
+    const loginSubmit = document.getElementById('login-submit');
+    const loginForm = document.getElementById('login-form');
 
-openLoginBtn.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    loginPopup.style.display = 'flex'; 
-});
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modal-message');
+    const modalConfirm = document.getElementById('modal-confirm');
+    const modalCancel = document.getElementById('modal-cancel');
+    let modalAction = null;
 
-closeLoginBtn.addEventListener('click', function() {
-    loginPopup.style.display = 'none'; 
-});
-
-cancelLoginBtn.addEventListener('click', function() {
-    loginPopup.style.display = 'none';
-});
-
-window.addEventListener('click', function(event) {
-    if (event.target === loginPopup) {
-        loginPopup.style.display = 'none';
+    function openModal(message, action) {
+        modalMessage.textContent = message;
+        modal.style.display = 'flex';
+        modalCancel.style.display = 'inline-block';
+        modalAction = action;
     }
+
+    function infoModal(message, action) {
+        modalMessage.textContent = message;
+        modal.style.display = 'flex';
+        modalCancel.style.display = 'none';
+        modalAction = action;
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        modalAction = null;
+    }
+
+    modalConfirm.addEventListener('click', () => {
+        if (modalAction) {
+            modalAction();
+        }
+        closeModal();
+    });
+
+    modalCancel.addEventListener('click', closeModal);
+
+    openLoginBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        loginPopup.style.display = 'flex';
+    });
+
+    closeLoginBtn.addEventListener('click', () => {
+        loginPopup.style.display = 'none';
+    });
+
+    cancelLoginBtn.addEventListener('click', () => {
+        loginPopup.style.display = 'none';
+    });
+
+    loginSubmit.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById('login-username').value;
+        const password = document.getElementById('login-password').value;
+        const storedUserData = localStorage.getItem('userData');
+
+        console.log(storedUserData);
+        
+
+        let userData = storedUserData ? JSON.parse(storedUserData) : null;
+
+        if (userData && userData.username === username && userData.password === password) {
+            infoModal("Inicio de sesión exitoso", () => {
+                loginPopup.style.display = 'none';
+                loginForm.reset();
+            });
+        } else {
+            infoModal("Nombre de usuario o contraseña incorrectos.", () => {
+                document.getElementById('login-username').focus();
+                document.getElementById('login-password').focus();
+            });
+        }
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === loginPopup) {
+            loginPopup.style.display = 'none';
+        }
+    });
 });
 
 // Comportamiento del popup de registro
@@ -145,6 +207,16 @@ document.addEventListener('DOMContentLoaded', () => {
             showInfoModal("El país debe tener al menos 3 caracteres.");
             return;
         }
+
+        const userData = {
+            username: username,
+            email: email,
+            password: password,
+            country: country
+        };
+
+        localStorage.setItem('userData', JSON.stringify(userData));
+        console.log("Datos guardados en localStorage:", userData);
 
         showInfoModal("¡Registro exitoso!", () => {
             profilePopup.style.display = 'none';
