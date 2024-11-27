@@ -36,61 +36,136 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Obtener los elementos
+// Comportamiento del popup de inicio de sesión
 const loginPopup = document.getElementById('login-popup');
-const openLoginBtn = document.querySelector('.auth-btn[href="#sign-in"]'); // El botón de "Iniciar sesión"
+const openLoginBtn = document.querySelector('.auth-btn[href="#sign-in"]'); 
 const closeLoginBtn = document.getElementById('close-login-popup');
 const cancelLoginBtn = document.getElementById('login-cancel');
 
-// Mostrar el popup cuando se hace clic en "Iniciar sesión"
 openLoginBtn.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevenir la acción por defecto del enlace
-    loginPopup.style.display = 'flex'; // Mostrar el popup
+    event.preventDefault(); 
+    loginPopup.style.display = 'flex'; 
 });
 
-// Cerrar el popup cuando se hace clic en el botón de cerrar
 closeLoginBtn.addEventListener('click', function() {
-    loginPopup.style.display = 'none'; // Ocultar el popup
+    loginPopup.style.display = 'none'; 
 });
 
-// Cerrar el popup cuando se hace clic en el botón de cancelar
 cancelLoginBtn.addEventListener('click', function() {
-    loginPopup.style.display = 'none'; // Ocultar el popup
+    loginPopup.style.display = 'none';
 });
 
-// Cerrar el popup si se hace clic fuera del área del popup (opcional)
 window.addEventListener('click', function(event) {
     if (event.target === loginPopup) {
-        loginPopup.style.display = 'none'; // Ocultar el popup si el clic es fuera del contenido
+        loginPopup.style.display = 'none';
     }
 });
 
+// Comportamiento del popup de registro
+document.addEventListener('DOMContentLoaded', () => {
+    const profilePopup = document.getElementById('profile-popup');
+    const openProfileBtn = document.querySelector('a[href="#reg"]');
+    const closeProfileBtn = document.getElementById('close-profile-popup');
+    const cancelProfileBtn = document.getElementById('cancel-profile');
+    const saveProfileBtn = document.getElementById('save-profile');
+    const profileForm = document.getElementById('profile-form');
 
-// Obtener los elementos
-const profilePopup = document.getElementById('profile-popup');
-const openProfileBtn = document.querySelector('.auth-btn[href="#reg"]'); // El botón de "Registrarse"
-const closeProfileBtn = document.getElementById('close-profile-popup');
-const cancelProfileBtn = document.getElementById('cancel-profile');
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modal-message');
+    const modalConfirm = document.getElementById('modal-confirm');
+    const modalCancel = document.getElementById('modal-cancel');
+    let modalAction = null;
 
-// Mostrar el popup cuando se hace clic en "Registrarse"
-openProfileBtn.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevenir la acción por defecto del enlace
-    profilePopup.style.display = 'flex'; // Mostrar el popup
-});
+    openProfileBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        profilePopup.style.display = 'flex';
+    });
 
-// Cerrar el popup cuando se hace clic en el botón de cerrar
-closeProfileBtn.addEventListener('click', function() {
-    profilePopup.style.display = 'none'; // Ocultar el popup
-});
+    // cerrar el popup cuando se hace clic en "x" -> NO HAY X ahora mismo 
+    closeProfileBtn.addEventListener('click', () => {
+        profilePopup.style.display = 'none';
+    });
 
-// Cerrar el popup cuando se hace clic en el botón de cancelar
-cancelProfileBtn.addEventListener('click', function() {
-    profilePopup.style.display = 'none'; // Ocultar el popup
-});
+    cancelProfileBtn.addEventListener('click', () => {
+        openModal("¿Estás seguro de que deseas cancelar el registro?", () => {
+            profilePopup.style.display = 'none';
+            profileForm.reset(); 
+        });
+    });
 
-// Cerrar el popup si se hace clic fuera del área del popup (opcional)
-window.addEventListener('click', function(event) {
-    if (event.target === profilePopup) {
-        profilePopup.style.display = 'none'; // Ocultar el popup si el clic es fuera del contenido
+    window.addEventListener('click', (event) => {
+        if (event.target === profilePopup) {
+            profilePopup.style.display = 'none';
+        }
+    });
+
+    function openModal(message, action) {
+        modalMessage.textContent = message;
+        modal.style.display = 'flex';
+        modalCancel.style.display = action ? 'inline-block' : 'none';
+        modalAction = action; 
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        modalAction = null;
+    }
+
+    modalConfirm.addEventListener('click', () => {
+        if (modalAction) modalAction();
+        closeModal();
+    });
+
+    modalCancel.addEventListener('click', closeModal);
+
+    saveProfileBtn.addEventListener('click', () => {
+        const username = document.getElementById('profile-username').value.trim();
+        const email = document.getElementById('profile-email').value.trim();
+        const password = document.getElementById('profile-password').value;
+        const confirmPassword = document.getElementById('profile-confirm-password').value;
+        const country = document.getElementById('profile-country').value.trim();
+
+        if (username.length < 3) {
+            showInfoModal("El nombre de usuario debe tener al menos 3 caracteres.");
+            return;
+        }
+        if (!validateEmail(email)) {
+            showInfoModal("Por favor, ingresa un correo electrónico válido.");
+            return;
+        }
+        if (!validatePassword(password)) {
+            showInfoModal("La contraseña debe tener al menos 12 caracteres, incluir una mayúscula, una minúscula, dos dígitos y un carácter especial.");
+            return;
+        }
+        if (password !== confirmPassword) {
+            showInfoModal("Las contraseñas no coinciden.");
+            return;
+        }
+        if (country.length < 3) {
+            showInfoModal("El país debe tener al menos 3 caracteres.");
+            return;
+        }
+
+        showInfoModal("¡Registro exitoso!", () => {
+            profilePopup.style.display = 'none';
+            profileForm.reset(); 
+        });
+    });
+
+    function showInfoModal(message, action = null) {
+        modalMessage.textContent = message;
+        modal.style.display = 'flex';
+        modalCancel.style.display = 'none'; 
+        modalAction = action;
+    }
+
+    function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function validatePassword(password) {
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{12,}$/;
+        return passwordRegex.test(password);
     }
 });
