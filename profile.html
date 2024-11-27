@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI PA NOEL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="#mapa"><img src="images/mapa-icono.png" alt="Mapa" class="icon"> Mapa</a></li>
+            <li><a href="#historia"><img src="images/historia-icono.png" alt="Historia" class="icon"> Historia</a></li>
+            <li><a href="#carta"><img src="images/carta-icono.png" alt="Carta" class="icon"> Carta</a></li>
+            <li><a href="#minijuegos"><img src="images/minijuegos-icono.png" alt="Minijuegos" class="icon"> Minijuegos</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <div class="profile-icon">
+                <a href="profile.html" class="profile-link">
+                    <div class="profile-img-container">
+                        <img src="images/perfil-icono.png" alt="Icono de perfil" class="profile-img">
+                    </div>
+                    <span class="profile-text">Perfil</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-prof">
+        <h1>Perfil</h1>
+        <div class="profile-box">
+            <div class="button-container-prof">
+                <button>Cambiar Datos</button>
+                <button>Postales</button>
+                <button>Calendario</button>
+                <button id="logout-button">Cerrar Sesión</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Modal para confirmación y mensajes -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="modal-message"></p>
+        
+            <button id="modal-confirm">Aceptar</button>
+            <button id="modal-cancel">Cancelar</button>
+            
+        </div>
+    </div> 
+
+    <script defer src="script.js"></script>
+</body>
+</html>

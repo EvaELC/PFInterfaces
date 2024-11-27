@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//comportamiento del popup de inicio de sesión
 document.addEventListener('DOMContentLoaded', () => {
     const loginPopup = document.getElementById('login-popup');
     const openLoginBtn = document.querySelector('.auth-btn[href="#sign-in"]');
@@ -99,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const storedUserData = localStorage.getItem('userData');
 
         console.log(storedUserData);
-        
 
         let userData = storedUserData ? JSON.parse(storedUserData) : null;
 
@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             infoModal("Inicio de sesión exitoso", () => {
                 loginPopup.style.display = 'none';
                 loginForm.reset();
+                showProfileIcon(username); // Llamar a la función para cambiar los botones
             });
         } else {
             infoModal("Nombre de usuario o contraseña incorrectos.", () => {
@@ -116,11 +117,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function showProfileIcon(username) {
+        const authContainer = document.querySelector('.auth-buttons');
+        
+        authContainer.innerHTML = '';
+
+        const profileIcon = document.createElement('div');
+        profileIcon.className = 'profile-icon';
+    
+        profileIcon.innerHTML = `
+            <a href="profile.html" class="profile-link">
+            <div class="profile-img-container">
+                <img src="images/perfil-icono.png" alt="Icono de perfil" class="profile-img">
+            </div>
+            <span class="profile-text">Perfil</span>
+        </a>
+        `;
+    
+        authContainer.appendChild(profileIcon);
+
+        localStorage.setItem('isLoggedIn', 'true'); // Marca que el usuario está logueado
+    }
+    
+
     window.addEventListener('click', (event) => {
         if (event.target === loginPopup) {
             loginPopup.style.display = 'none';
         }
     });
+});
+
+// comprobar si el usuario está logueado para no mostrar botones de inicio y registro
+document.addEventListener('DOMContentLoaded', () => {
+    const authContainer = document.querySelector('.auth-buttons');
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn === 'true') {
+        // Mostrar solo el icono de perfil
+        authContainer.innerHTML = `
+            <div class="profile-icon">
+                <a href="profile.html" class="profile-link">
+                    <div class="profile-img-container">
+                        <img src="images/perfil-icono.png" alt="Icono de perfil" class="profile-img">
+                    </div>
+                    <span class="profile-text">Perfil</span>
+                </a>
+            </div>
+        `;
+    }
+});
+
+//comportamiento del botón de cierre de sesión
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutButton = document.getElementById('logout-button');
+
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'index.html';
+        });
+    }
 });
 
 // Comportamiento del popup de registro
