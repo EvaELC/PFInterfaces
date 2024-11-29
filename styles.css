@@ -94,21 +94,6 @@ body {
 
 /* Estilos de la sección principal */
 .home {
-    text-align: right;
-    background-color: #FF4500;
-    background-image: url("images/background.jpeg");
-    background-size: cover;
-    color: white;
-    padding: 50px;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px; 
-}
-/* repetido de arriba*/
-.home {
     text-align: right; 
     background-color: #FF4500;
     background-image: url("images/background.jpeg");
