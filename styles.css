@@ -94,27 +94,13 @@ body {
 
 /* Estilos de la sección principal */
 .home {
-    text-align: right;
-    background-color: #FF4500;
-    background-image: url("/images/background.jpeg");
-    background-size: cover;
-    color: white;
-    padding: 50px;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px; 
-}
-
-.home {
     text-align: right; 
     background-color: #FF4500;
     background-image: url("/images/background.jpeg");
     background-size: cover;
     color: white;
-    height: 80vh;
+    padding: 50px;
+    height: 90vh;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -358,6 +344,66 @@ label {
 .profile-text {
     margin-top: 5px;         
     font-size: 16px;         
+}
+
+/**/
+.mapa {
+    text-align: right; 
+    background-color: #FF4500;
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    height: 90vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-end; 
+    padding-left: 10%;
+}
+
+.historia {
+    text-align: right; 
+    background-color: #FF4500;
+    background-image: url("/images/background.jpeg");
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    height: 90vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-end; 
+    padding-left: 10%;
+}
+
+.carta {
+    text-align: right; 
+    background-color: #FF4500;
+    background-image: url("/images/background.jpeg");
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    height: 90vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-end; 
+    padding-left: 10%;
+}
+
+.minijuegos {
+    text-align: right; 
+    background-color: #FF4500;
+    background-image: url("/images/background.jpeg");
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    height: 90vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-end; 
+    padding-left: 10%;
 }
 
 
