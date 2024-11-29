@@ -346,40 +346,6 @@ label {
     font-size: 16px;         
 }
 
-
-.carta {
-    text-align: right; 
-    background-color: #FF4500;
-    background-image: url("images/background.jpeg");
-    background-size: cover;
-    color: white;
-    padding: 50px;
-    height: 90vh;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: flex-end; 
-    padding-left: 10%;
-}
-
-.minijuegos {
-    text-align: right; 
-    background-color: #FF4500;
-    background-image: url("images/background.jpeg");
-    background-size: cover;
-    color: white;
-    padding: 50px;
-    height: 90vh;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: flex-end; 
-    padding-left: 10%;
-}
-
-
-
-
 /* ESTILOS PROFILE.HTML*/
 .container-prof {
     background-color: #f0f0f0;
@@ -410,6 +376,7 @@ label {
     max-width: 120px;
     height: auto;
 }
+
 /* ESTILOS BOTON MAPA */
 .mapa-container {
     position: relative;
@@ -427,10 +394,12 @@ label {
     justify-content: center;
     align-items: center;
 }
+
 .mapa-img {
     max-width: 100%;
     height: auto;
 }
+
 .mapa-texto {
     margin-top: 20px; 
     color: #ffffff;
@@ -438,25 +407,34 @@ label {
     font-size: 1.8em; 
     line-height: 1.2; 
 }
+
+.mapa-texto h1 {
+    margin-top: 75px; 
+}
+
 /* Formato para decoraciones */
 .decoracion {
     position: absolute;
 }
+
 .guirnalda {
     top: 25%;
     right: 2%;
     width: 130px;
 }
+
 .trineo {
     top: 24%;
     left: 2%;
     width: 130px;
 }
+
 .papa-noel-renos {
     bottom: 15%;
     left: 2%;
     width: 130px;
 }
+
 .snowman {
     bottom: 15%;
     right: 2%;
@@ -474,15 +452,15 @@ label {
     align-items: center;
     text-align: center;
     position: relative;
-    max-width: 900px;  /* Controla el ancho máximo de la sección */
-    margin: 10vh auto;    /* Centra horizontalmente la sección */
+    max-width: 900px;  
+    margin: 10vh auto;    
 }
 
 .historia-container p {
-    max-width: 800px;  /* Limita el ancho del párrafo para una mejor lectura */
-    margin: 20px auto; /* Centra los párrafos */
+    max-width: 800px;  
+    margin: 20px auto; 
     font-size: 1.2em;
-    text-align: center; /* Asegura que el texto esté centrado dentro del contenedor */
+    text-align: center; 
     line-height: 1.6;
 }
 
@@ -530,6 +508,10 @@ label {
     height: 50px;
 }
 .bola-navidad {
-    width: 140px; /* Tamaño  */
+    width: 140px; 
     height: 140px;
+}
+
+.historia-texto h1 {
+    margin-top: 75px;
 }

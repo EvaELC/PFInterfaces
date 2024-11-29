@@ -298,29 +298,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//comportamiento boton del Mapa
-document.addEventListener("DOMContentLoaded", function () {
-    const botonMapa = document.querySelector("a[href='#mapa']");
-    const seccionMapa = document.getElementById("seccion-mapa");
-    const secciones = document.querySelectorAll(".home, #login-popup, #profile-popup");
-    botonMapa.addEventListener("click", function (event) {
-        event.preventDefault(); 
-        // Ocultar resto de secciones
-        secciones.forEach(section => section.style.display = "none");
-        // Mostrar sección del mapa
-        seccionMapa.style.display = "block";
-    });
-});
-// comportamiento boton de historia
-document.addEventListener("DOMContentLoaded", function () {
-    const botonHistoria = document.querySelector("a[href='#historia']");
-    const seccionHistoria = document.getElementById("seccion-historia");
-    const secciones = document.querySelectorAll(".home, #login-popup, #profile-popup, #seccion-mapa");
-
-    botonHistoria.addEventListener("click", function (event) {
-        event.preventDefault(); 
-        secciones.forEach(section => section.style.display = "none");
-        seccionHistoria.style.display = "block";
-    });
-});
-
