@@ -346,40 +346,11 @@ label {
     font-size: 16px;         
 }
 
-/**/
-.mapa {
-    text-align: right; 
-    background-color: #FF4500;
-    background-size: cover;
-    color: white;
-    padding: 50px;
-    height: 90vh;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: flex-end; 
-    padding-left: 10%;
-}
-
-.historia {
-    text-align: right; 
-    background-color: #FF4500;
-    background-image: url("/images/background.jpeg");
-    background-size: cover;
-    color: white;
-    padding: 50px;
-    height: 90vh;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: flex-end; 
-    padding-left: 10%;
-}
 
 .carta {
     text-align: right; 
     background-color: #FF4500;
-    background-image: url("/images/background.jpeg");
+    background-image: url("images/background.jpeg");
     background-size: cover;
     color: white;
     padding: 50px;
@@ -394,7 +365,7 @@ label {
 .minijuegos {
     text-align: right; 
     background-color: #FF4500;
-    background-image: url("/images/background.jpeg");
+    background-image: url("images/background.jpeg");
     background-size: cover;
     color: white;
     padding: 50px;
@@ -490,4 +461,75 @@ label {
     bottom: 15%;
     right: 2%;
     width: 130px;
+}
+
+/* ESTILOS SECCION HISTORIA*/
+.historia-container {
+    padding: 50px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    max-width: 900px;  /* Controla el ancho máximo de la sección */
+    margin: 10vh auto;    /* Centra horizontalmente la sección */
+}
+
+.historia-container p {
+    max-width: 800px;  /* Limita el ancho del párrafo para una mejor lectura */
+    margin: 20px auto; /* Centra los párrafos */
+    font-size: 1.2em;
+    text-align: center; /* Asegura que el texto esté centrado dentro del contenedor */
+    line-height: 1.6;
+}
+
+.videos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.video h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+
+.decoracion-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.left-decoracion,
+.right-decoracion {
+    position: absolute;
+    top: 15%;
+    display: flex;
+    flex-direction: column; 
+    gap: 120px; 
+    height: auto; 
+}
+.left-decoracion {
+    left: -70px;
+}
+.right-decoracion {
+    right: -70px; 
+}
+.decoracion-row {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+}
+.bola-navidad {
+    width: 140px; /* Tamaño  */
+    height: 140px;
 }
