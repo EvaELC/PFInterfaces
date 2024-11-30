@@ -40,7 +40,7 @@
         <h1>Perfil</h1>
         <div class="profile-box">
             <div class="button-container-prof">
-                <button>Cambiar Datos</button>
+                <button id="update-profile-button">Cambiar Datos</button>
                 <button>Postales</button>
                 <button>Calendario</button>
                 <button id="logout-button">Cerrar Sesión</button>
@@ -60,6 +60,38 @@
         </div>
     </div> 
 
-    <script defer src="script.js"></script>
+    <!-- Popup de Actualizacion -->
+    <div id="profile-popup" class="profile-popup">
+        <div class="profile-popup-content">
+            <span id="close-profile-popup" class="close">&times;</span>
+            <h2>Mi Perfil</h2>
+            <form id="profile-form">
+                <label for="profile-username">Nombre de Usuario*:</label>
+                <input type="text" id="profile-username">
+
+                <label for="profile-email">Correo Electrónico*:</label>
+                <input type="email" id="profile-email">
+    
+                <label for="profile-password">Contraseña*:</label>
+                <input type="password" id="profile-password">
+                <small>12 longitud, incluye 2 números, 1 carácter especial, 1 mayúscula y 1 minúscula</small>
+    
+                <label for="profile-confirm-password">Confirmar Contraseña*:</label>
+                <input type="password" id="profile-confirm-password">
+    
+                <label for="profile-country">País:</label>
+                <input type="text" id="profile-country">
+
+                <div class="button-container">
+                    <button type="button" id="save-profile">Guardar</button>
+                    <button type="button" id="cancel-profile">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script defer src="script-profile.js"></script>
 </body>
 </html>

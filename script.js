@@ -167,18 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//comportamiento del botón de cierre de sesión
-document.addEventListener('DOMContentLoaded', () => {
-    const logoutButton = document.getElementById('logout-button');
-
-    if (logoutButton) {
-        logoutButton.addEventListener('click', () => {
-            localStorage.removeItem('isLoggedIn');
-            window.location.href = 'index.html';
-        });
-    }
-});
-
 // Comportamiento del popup de registro
 document.addEventListener('DOMContentLoaded', () => {
     const profilePopup = document.getElementById('profile-popup');
@@ -187,6 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelProfileBtn = document.getElementById('cancel-profile');
     const saveProfileBtn = document.getElementById('save-profile');
     const profileForm = document.getElementById('profile-form');
+
+    const updateProfileBtn = document.getElementById('update-profile-button');
 
     const modal = document.getElementById('modal');
     const modalMessage = document.getElementById('modal-message');
@@ -296,5 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{12,}$/;
         return passwordRegex.test(password);
     }
+    
 });
 
