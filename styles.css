@@ -377,7 +377,7 @@ label {
     height: auto;
 }
 
-/* ESTILOS BOTON MAPA */
+/* Mapa */
 .mapa-container {
     position: relative;
     text-align: center;
@@ -412,6 +412,40 @@ label {
     margin-top: 75px; 
 }
 
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+}
+
+.point {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    display: none;
+}
+
+.point:hover .tooltip {
+    display: block;
+}
+
 /* Formato para decoraciones */
 .decoracion {
     position: absolute;
@@ -441,7 +475,7 @@ label {
     width: 130px;
 }
 
-/* ESTILOS SECCION HISTORIA*/
+/* Historia */
 .historia-container {
     padding: 50px;
     color: white;
