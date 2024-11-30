@@ -176,8 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveProfileBtn = document.getElementById('save-profile');
     const profileForm = document.getElementById('profile-form');
 
-    const updateProfileBtn = document.getElementById('update-profile-button');
-
     const modal = document.getElementById('modal');
     const modalMessage = document.getElementById('modal-message');
     const modalConfirm = document.getElementById('modal-confirm');
@@ -289,3 +287,81 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    const envCarta = document.getElementById('env-card');
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modal-message');
+    const modalConfirm = document.getElementById('modal-confirm');
+    const modalCancel = document.getElementById('modal-cancel');
+    let modalAction = null;
+
+    function infoModal(message, action) {
+        modalMessage.textContent = message;
+        modal.style.display = 'flex';
+        modalCancel.style.display = 'none';
+        modalAction = action;
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        modalAction = null;
+    }
+
+    modalConfirm.addEventListener('click', () => {
+        if (modalAction) {
+            modalAction();
+        }
+        closeModal();
+    });
+
+    modalCancel.addEventListener('click', closeModal);
+
+    envCarta.addEventListener('click', (event) => {
+        event.preventDefault(); 
+    
+        if (isLoggedIn === 'true') {
+            // validar el formulario
+            if (!validateForm()) {
+                infoModal("Rellena correctamente el formulario", () => {
+                });
+            } else {
+                infoModal("¡Carta enviada correctamente!", () => {
+                    contactForm.reset();
+                });
+            }
+        } else {
+            infoModal("Solo se puede enviar una carta si se ha iniciado sesión", () => {
+            });
+        }
+    
+    });  
+
+    function validateForm() {
+        const name = document.getElementById('env-nombre').value.trim();
+        const ciudad = document.getElementById('env-ciudad').value.trim();
+        const pais = document.getElementById('env-pais').value.trim();
+        const texto = document.getElementById('env-carta').value.trim();
+
+        if (name.length < 3) {
+            infoModal("El nombre debe tener al menos 3 caracteres.");
+            return false;
+        }
+        if (ciudad.length < 3) {
+            infoModal("La ciudad debe tener al menos 3 caracteres.");
+            return false;
+        }
+        if (pais.length < 3) {
+            infoModal("El país debe tener al menos 3 caracteres.");
+            return false;
+        }
+        if (texto.length < 10) {
+            infoModal("La carta debe tener al menos 10 caracteres.");
+            return false;
+        }
+        return true;
+    }
+});
+  

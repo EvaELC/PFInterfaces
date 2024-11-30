@@ -22,7 +22,7 @@
         <ul class="navbar-links">
             <li><a href="#seccion-mapa"><img src="images/mapa-icono.png" alt="Mapa" class="icon"> Mapa</a></li>
             <li><a href="#seccion-historia"><img src="images/historia-icono.png" alt="Historia" class="icon"> Historia</a></li>
-            <li><a href="#carta"><img src="images/carta-icono.png" alt="Carta" class="icon"> Carta</a></li>
+            <li><a href="#seccion-carta"><img src="images/carta-icono.png" alt="Carta" class="icon"> Carta</a></li>
             <li><a href="#minijuegos"><img src="images/minijuegos-icono.png" alt="Minijuegos" class="icon"> Minijuegos</a></li>
         </ul>
         <div class="auth-buttons">
@@ -231,7 +231,46 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- Carta -->
+    <div id="seccion-carta" class="carta-container">
+        <div class="titulo-carta">
+            <img src="images/guirnalda-frente.png" alt="img-titulo-carta" class="titulo-img-carta izquierda">
+            <h1>Escribe tu carta a Papá Noel</h1>
+            <img src="images/guirnalda-frente.png" alt="img-titulo-carta" class="titulo-img-carta derecha">
+        </div>
+        <div class="left-decor-carta">
+            <img src="images/arbol-santa.png" alt="Bola de Navidad" class="decoracion arbol-santa">
+        </div>
+        <form id="contact-form"  class="contact-form">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="env-nombre" placeholder="Nombre">
+            
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="env-ciudad" placeholder="Ciudad">
+            
+            <label for="pais">País</label>
+            <input type="text" id="env-pais" placeholder="País">
+            
+            <label for="carta">Texto</label>
+            <textarea id="env-carta" placeholder="Escribe tu carta..."></textarea>
+            
+            <button type="submit" id="env-card">ENVIAR</button> 
+        </form>
+        <div class="right-decor-carta">
+            <div class="decoracion-row-carta">
+                <img src="images/snowflake.png" alt="snowflake" class="decoracion snowflake">
+            </div>
+            <div class="decoracion-row-carta">
+                <img src="images/snowflake.png" alt="snowflake" class="decoracion snowflake">
+            </div>
+            <div class="decoracion-row-carta">
+                <img src="images/snowflake.png" alt="snowflake" class="decoracion snowflake">
+            </div>
+        </div>
+    </div>
+
+
     <!-- Popup de Inicio de Sesión -->
     <div id="login-popup" class="popup">
         <div class="popup-content">
