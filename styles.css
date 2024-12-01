@@ -673,9 +673,9 @@ label {
 
 .calendario-container {
     display: none; /* Cambiado de 'none' a 'flex' para alinear los elementos */
-    flex-direction: row; /* Asegura que el texto y la imagen estén en línea horizontal */
-    justify-content: space-between; /* Separa los elementos horizontalmente */
-    align-items: center; /* Alinea verticalmente el texto y el calendario */
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
     background-color: #b91919;
     border-radius: 15px;
     width: 80%;
@@ -689,7 +689,7 @@ label {
 
 .calendario-text {
     display: flex;
-    flex-direction: column; /* Asegura que el título esté encima del texto */
+    flex-direction: column; 
     justify-content: center;
     text-align: center; 
 }
@@ -703,18 +703,127 @@ label {
 }
 
 .calendario-container p {
-    max-width: 50%; /* Ajusta el texto a un 40% del ancho total */
+    max-width: 50%; 
     font-size: 2rem;
     line-height: 1.8;
-    margin-bottom: 0; /* Elimina márgenes extra */
+    margin-bottom: 0;
     margin-left: 200px;
 }
 
 .calendario-img {
     width: auto;
-    max-width: 50%; /* Ajusta el tamaño del calendario */
+    max-width: 50%; 
     height: auto;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* MINIJUEGOS - Boton*/
+.minijuegos-container {
+    text-align: center;
+    margin-top: 100px;
+    padding: 40px 20px;
+    background-color: #b91919; 
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 10vh auto;
+}
+
+.minijuegos-container h1 {
+    font-size: 4rem; 
+    margin-bottom: 5px;
+    margin-top: 0; 
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.minijuegos-container p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.minijuegos-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    gap: 20px; 
+}
+
+.juegos-lista {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+    width: 100%;
+    max-width: 800px;
+}
+
+
+.juego {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 180px;
+    padding: 10px;
+    color: #000;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.juego:hover {
+    transform: scale(1.1);
+}
+.juego img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.juego h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.separador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.separador-juego {
+    width: 600px; 
+    height: 60px;
+}
+
+.mistletoe2 {
+    top: 1%;
+    right: 2%;
+    width: 220px;
+}
+
+.mistletoe1{
+    top: 1%;
+    left: 2%;
+    width: 220px;
+}
+
+.santaball {
+    bottom: 1%;
+    left: 2%;
+    width: 170px;
+}
+
+.santagift {
+    bottom: 1%;
+    right: 2%;
+    width: 170px;
+}
