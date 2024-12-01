@@ -10,6 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//comportamiento del botón de calendario
+document.addEventListener('DOMContentLoaded', () => {
+    const calendarButton = document.getElementById('calendar-button');
+    const calendar = document.getElementById('calendario');
+    calendarButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        calendar.style.display = 'flex'; 
+    });
+    
+});
+
 //comportamiento actualización de perfil
 document.addEventListener('DOMContentLoaded', () => {
     const profilePopup = document.getElementById('profile-popup');

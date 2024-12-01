@@ -670,3 +670,51 @@ label {
     width: 90px;          
     height: auto;
 }
+
+.calendario-container {
+    display: none; /* Cambiado de 'none' a 'flex' para alinear los elementos */
+    flex-direction: row; /* Asegura que el texto y la imagen estén en línea horizontal */
+    justify-content: space-between; /* Separa los elementos horizontalmente */
+    align-items: center; /* Alinea verticalmente el texto y el calendario */
+    background-color: #b91919;
+    border-radius: 15px;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    
+    color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Irish Grover', cursive;
+}
+
+.calendario-text {
+    display: flex;
+    flex-direction: column; /* Asegura que el título esté encima del texto */
+    justify-content: center;
+    text-align: center; 
+}
+
+.calendario-container h1 {
+    max-width: 30%; 
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    margin-left: 250px;
+    
+}
+
+.calendario-container p {
+    max-width: 50%; /* Ajusta el texto a un 40% del ancho total */
+    font-size: 2rem;
+    line-height: 1.8;
+    margin-bottom: 0; /* Elimina márgenes extra */
+    margin-left: 200px;
+}
+
+.calendario-img {
+    width: auto;
+    max-width: 50%; /* Ajusta el tamaño del calendario */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
