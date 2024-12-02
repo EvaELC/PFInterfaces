@@ -74,6 +74,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
+//comportamiento del botón de postales
+document.addEventListener('DOMContentLoaded', () => {
+    const postalButton = document.getElementById('postal-button');
+    const postNavidad = document.getElementById('postal-navidad');
+    const profCont = document.getElementById('container-prof');
+    
+    postalButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        postNavidad.style.display = 'flex'; 
+        profCont.style.display = 'none';
+    });
+    
+});
+
 //comportamiento actualización de perfil
 document.addEventListener('DOMContentLoaded', () => {
     const profilePopup = document.getElementById('profile-popup');
