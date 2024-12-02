@@ -79,11 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const postalButton = document.getElementById('postal-button');
     const postNavidad = document.getElementById('postal-navidad');
     const profCont = document.getElementById('container-prof');
-    
+    const postalInit = document.getElementById('init-button');
+    const postSel = document.getElementById('postal-seleccion');
+
     postalButton.addEventListener('click', (event) => {
         event.preventDefault();
         postNavidad.style.display = 'flex'; 
         profCont.style.display = 'none';
+        postalInit.addEventListener('click', (event) => {
+            event.preventDefault();
+            postNavidad.style.display = 'none'; 
+            postSel.style.display = 'flex'; 
+        });
     });
     
 });
