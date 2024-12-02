@@ -13,10 +13,61 @@ document.addEventListener('DOMContentLoaded', () => {
 //comportamiento del botón de calendario
 document.addEventListener('DOMContentLoaded', () => {
     const calendarButton = document.getElementById('calendar-button');
-    const calendar = document.getElementById('calendario');
+    const calendario = document.getElementById('calendario');
+    const today = new Date(); 
+    const currentDay = today.getDate(); 
+    const cancionNavidad = document.getElementById('cancion-navidad');
+    const backButton = document.getElementById('back-button');
+    const currentDayCell = document.getElementById(`day-${currentDay}`);
+    
+    if (currentDayCell) {
+        currentDayCell.classList.add('current-day'); 
+        currentDayCell.addEventListener('click', () => {
+            calendario.style.display = 'none'; 
+            cancionNavidad.style.display = 'flex';
+        });
+    }
+    
     calendarButton.addEventListener('click', (event) => {
         event.preventDefault();
-        calendar.style.display = 'flex'; 
+        calendario.style.display = 'flex'; 
+    });
+    
+    backButton.addEventListener('click', () => {
+        cancionNavidad.style.display = 'none';
+        calendario.style.display = 'flex';
+    });
+
+    const audio = new Audio('happy-xmas.mp3'); 
+    const playButton = document.getElementById('play-button');
+    const progressBar = document.getElementById('progress-bar');
+    const timeDisplay = document.getElementById('time-display');
+
+    playButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playButton.textContent = '⏸'; 
+        } else {
+            audio.pause();
+            playButton.textContent = '▶'; 
+        }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+        const currentTime = Math.floor(audio.currentTime);
+        const duration = Math.floor(audio.duration) || 0;
+        const minutes = Math.floor(currentTime / 60);
+        const seconds = currentTime % 60;
+        const totalMinutes = Math.floor(duration / 60);
+        const totalSeconds = duration % 60;
+
+        timeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds} / ${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`;
+        progressBar.value = (audio.currentTime / audio.duration) * 100;
+    });
+
+    progressBar.addEventListener('input', () => {
+        const seekTime = (progressBar.value / 100) * audio.duration;
+        audio.currentTime = seekTime;
     });
     
 });
@@ -24,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //comportamiento actualización de perfil
 document.addEventListener('DOMContentLoaded', () => {
     const profilePopup = document.getElementById('profile-popup');
-    const openProfileBtn = document.getElementById('update-profile-button'); //abre el popup
+    const openProfileBtn = document.getElementById('update-profile-button'); 
     const closeProfileBtn = document.getElementById('close-profile-popup');
     const cancelProfileBtn = document.getElementById('cancel-profile');
     const saveProfileBtn = document.getElementById('save-profile');
@@ -117,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // nuevos datos en localstorage
         const userData = {
             username: username,
             email: email,
