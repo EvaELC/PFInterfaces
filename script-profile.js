@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancionNavidad = document.getElementById('cancion-navidad');
     const backButton = document.getElementById('back-button');
     const currentDayCell = document.getElementById(`day-${currentDay}`);
-    
+    const profCont = document.getElementById('container-prof');
+
     if (currentDayCell) {
         currentDayCell.classList.add('current-day'); 
         currentDayCell.addEventListener('click', () => {
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     calendarButton.addEventListener('click', (event) => {
         event.preventDefault();
         calendario.style.display = 'flex'; 
+        profCont.style.display = 'none';
     });
     
     backButton.addEventListener('click', () => {
