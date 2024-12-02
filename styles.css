@@ -355,7 +355,6 @@ label {
     margin: 150px auto;
     padding: 20px;
     text-align: center;
-   
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     
 }
@@ -368,7 +367,7 @@ label {
     display: grid; 
     grid-template-columns: repeat(2, 1fr);
     gap: 15px; 
-    margin-top: 20px;
+    margin-bottom: 80px;
     justify-items: center; 
 }
 
@@ -955,6 +954,7 @@ td, th {
     align-items: center;
     justify-content: space-between;
     gap: 100px;
+    margin-bottom: 80px; 
 }
 
 .postal {
@@ -1008,6 +1008,7 @@ td, th {
     gap: 30px; 
     width: 100%;
     max-width: 800px;
+    margin-bottom: 50px; 
 }
 
 .postal-item {
@@ -1047,7 +1048,7 @@ td, th {
     margin-left: 1000px; 
 }
 
-#continue-button {
+#continue-button, #continue-button1, #continue-button2{
     background-color: #006400;
     color: white;
     border: none;
@@ -1060,6 +1061,8 @@ td, th {
     
 }
 
+#continue-button2:hover,
+#continue-button1:hover,
 #continue-button:hover {
     background-color: #004d00;
     transform: scale(1.05);
@@ -1109,6 +1112,173 @@ td, th {
     right: 400px;
 }
 
+.postal-pnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 150px auto;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.postal-submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.postal-pnt-title {
+    font-size: 2.0rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.dibujo {
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.img-btn {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.img-btn:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+.postal-fin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 150px auto;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.postal-fin-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.postales-fin {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 160px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.postales-fin img {
+    width: 330px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.postal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 150px auto;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.postal-info-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.postal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    width: 100%;
+    max-width: 600px;
+    margin: 60px;
+    margin-bottom: 150px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-group label {
+    width: 200px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.postal-env {
+    align-self: center;
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.postal-env:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
 
 /* MINIJUEGOS - Boton*/
 .minijuegos-container {

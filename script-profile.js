@@ -81,6 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const profCont = document.getElementById('container-prof');
     const postalInit = document.getElementById('init-button');
     const postSel = document.getElementById('postal-seleccion');
+    const contButton = document.getElementById('continue-button')
+    const postDib = document.getElementById('postal-dib');
+    const contButton1 = document.getElementById('continue-button1')
+    const postFin = document.getElementById('postal-final');
+    const contButton2 = document.getElementById('continue-button2')
+    const postInfo = document.getElementById('postal-info');
+    
 
     postalButton.addEventListener('click', (event) => {
         event.preventDefault();
@@ -90,6 +97,21 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             postNavidad.style.display = 'none'; 
             postSel.style.display = 'flex'; 
+            contButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                postDib.style.display = 'flex'; 
+                postSel.style.display = 'none'; 
+                contButton1.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    postDib.style.display = 'none'; 
+                    postFin.style.display = 'flex'; 
+                    contButton2.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        postInfo.style.display = 'flex'; 
+                        postFin.style.display = 'none'; 
+                    });
+                });
+            });
         });
     });
     
