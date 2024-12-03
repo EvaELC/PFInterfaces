@@ -1587,3 +1587,93 @@ td, th {
     width:170px;
     height: 170px;
 }
+
+
+/* Juego 2 formato: ------------*/
+tree-area {
+    background-color: #663300;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#tree {
+    background: url('images/christmas-tree.jpeg') no-repeat center;
+    background-size: cover;
+    width: 400px;
+    height: 600px;
+    position: relative;
+}
+
+.decorations {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.5rem;
+}
+
+#decorations-container {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 15px;
+}
+
+.decoration {
+    width: 60px;
+    height: 60px;
+    cursor: grab;
+}
+
+.red-ornament {
+    background: url('images/red-ornament.png') no-repeat center;
+    background-size: cover;
+}
+.green-ornament {
+    background: url('images/green-ornament.png') no-repeat center;
+    background-size: cover;
+}
+.gingerbread {
+    background: url('images/gingerbread.png') no-repeat center;
+    background-size: cover;
+}
+.reindeer {
+    background: url('images/reindeer.png') no-repeat center;
+    background-size: cover;
+}
+.star {
+    background: url('images/star.png') no-repeat center;
+    background-size: cover;
+}
+.bell {
+    background: url('images/bell.png') no-repeat center;
+    background-size: cover;
+}
+.ornament-extra {
+    background: url('images/ornament-extra.png') no-repeat center;
+    background-size: cover;
+}
+.gift {
+    background: url('images/gift_game2.png') no-repeat center;
+    background-size: cover;
+}
+.candy-cane {
+    background: url('images/candycane.png') no-repeat center;
+    width: 40px; 
+    height: 80px; 
+    background-size: contain; 
+}
+
+.decoracion-juego {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.decoracion-gift {
+    width: 50px;
+    height: auto;
+}

@@ -352,16 +352,35 @@
         </div>
     </div>
 
-    <!-- Sección Juego 2 -->
+    <!-- Sección Juego 2 : Decora un arbol!-->
     <div id="juego2" class="juego-container oculto">
         <button onclick="volver()">⬅ Volver</button>
         <div class="juego-content">
             <div class="juego-titulo">
-                <h2>Santa<br>Wheelie<br>Bike<br>Challenge</h2>
+                <h2>Decorate<br>the<br>Christmas<br>Tree!</h2>
                 <img src="images/santa_with_snowman.png" alt="Santa Icon" class="santa-icon">
             </div>
-            <div class="juego-imagen">
-                <img src="images/game2_background.png" alt="Santa Wheelie Bike Challenge" class="juego2-img">
+            <div class="tree-area">
+                <div id="tree" class="tree"></div>
+            </div>
+            <div class="decorations">
+                <h3>Decoraciones</h3>
+                <div id="decorations-container">
+                    <!-- Añadir elementos decorativos como divs con clases decorativas -->
+                    <div class="decoration red-ornament" draggable="true"></div>
+                    <div class="decoration green-ornament" draggable="true"></div>
+                    <div class="decoration gingerbread" draggable="true"></div>
+                    <div class="decoration candy-cane" draggable="true"></div>
+                    <div class="decoration star" draggable="true"></div>
+                    <div class="decoration reindeer" draggable="true"></div>
+                    <div class="decoration bell" draggable="true"></div>
+                    <div class="decoration ornament-extra" draggable="true"></div>
+                    <div class="decoration gift" draggable="true"></div>
+
+                    <!-- Añadir más decoraciones como desees -->
+                </div>
+                <button id="clear-button">Limpiar</button>
+                <button id="save-button">Guardar Imagen</button>
             </div>
             <div class="decoracion-juego">
                 <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">

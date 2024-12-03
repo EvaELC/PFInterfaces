@@ -547,3 +547,52 @@ function resetGame() {
 }
 document.addEventListener("DOMContentLoaded", createBoard);
 
+
+
+
+/*----------------- Juego 2: implementacion--------------------------------*/
+document.addEventListener('DOMContentLoaded', function () {
+    const tree = document.getElementById('tree');
+    const decorations = document.querySelectorAll('.decoration');
+    const clearButton = document.getElementById('clear-button');
+    const saveButton = document.getElementById('save-button');
+
+    decorations.forEach(decoration => {
+        decoration.addEventListener('dragstart', dragStart);
+    });
+
+    tree.addEventListener('dragover', dragOver);
+    tree.addEventListener('drop', drop);
+
+    function dragStart(e) {
+        e.dataTransfer.setData('text/plain', e.target.className);
+    }
+
+    function dragOver(e) {
+        e.preventDefault(); 
+    }
+
+    function drop(e) {
+        e.preventDefault();
+        const classNames = e.dataTransfer.getData('text/plain').split(' ');
+        const newDecoration = document.createElement('div');
+        newDecoration.classList.add(...classNames);
+        newDecoration.style.position = 'absolute';
+        newDecoration.style.top = `${e.offsetY - 30}px`;
+        newDecoration.style.left = `${e.offsetX - 30}px`;
+        tree.appendChild(newDecoration);
+    }
+
+    clearButton.addEventListener('click', function () {
+        tree.innerHTML = ''; // Clear all decorations on the tree
+    });
+
+    saveButton.addEventListener('click', function () {
+        html2canvas(tree).then(canvas => {
+            const link = document.createElement('a');
+            link.download = 'decorated-tree.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+    });
+});
