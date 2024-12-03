@@ -588,11 +588,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     saveButton.addEventListener('click', function () {
-        html2canvas(tree).then(canvas => {
-            const link = document.createElement('a');
-            link.download = 'decorated-tree.png';
-            link.href = canvas.toDataURL();
-            link.click();
-        });
+        domtoimage.toPng(tree)
+            .then(function (dataUrl) {
+                let link = document.createElement('a');
+                link.href = dataUrl;
+                link.download = 'christmas_tree.png';
+                link.click();
+            })
+            .catch(function (error) {
+                console.error('Error saving image:', error);
+            });
     });
 });

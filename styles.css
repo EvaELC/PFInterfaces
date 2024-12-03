@@ -1450,10 +1450,10 @@ td, th {
     transform: scale(1.1);
 }
 .juego img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
+    width: 150px; 
+    height: 150px;  
+    object-fit: cover; 
+    border-radius: 10px; }
 
 .juego h2 {
     font-size: 1.2rem;
@@ -1620,9 +1620,11 @@ tree-area {
 }
 
 .decoration {
-    width: 60px;
-    height: 60px;
-    cursor: grab;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .red-ornament {
