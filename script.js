@@ -365,3 +365,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
   
+
+
+//Implementación para sección minijuegos
+function mostrarJuego(juegoId) {
+   document.getElementById("minijuegos").classList.add("oculto");
+    document.getElementById(juegoId).classList.remove("oculto");
+}
+
+function volver() {
+    document.getElementById("minijuegos").classList.remove("oculto");
+    document.getElementById("juego1").classList.add("oculto");
+    document.getElementById("juego2").classList.add("oculto");
+    document.getElementById("juego3").classList.add("oculto");
+}

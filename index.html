@@ -275,15 +275,15 @@
         <p>Selecciona el juego que más te guste</p>
         <div class="minijuegos-slider">
             <div class="juegos-lista">
-                <div class="juego">
+                <div class="juego" onclick="mostrarJuego('juego1')">
                     <img src="images/game1.png" alt="Santa Games">
                     <h2>Santa Games</h2>
                 </div>
-                <div class="juego">
+                <div class="juego" onclick="mostrarJuego('juego2')">
                     <img src="images/game2.png" alt="Santa Wheelie Bike">
                     <h2>Santa Wheelie Bike</h2>
                 </div>
-                <div class="juego">
+                <div class="juego" onclick="mostrarJuego('juego3')">
                     <img src="images/game3.png" alt="Jewel Christmas Game">
                     <h2>Jewel Christmas Game</h2>
                 </div>
@@ -299,7 +299,65 @@
         <img src="images/mistletoe_rocket2.png"alt="Mistletoe Rocket 2" class="decoracion mistletoe2">
         <img src="images/gift_game.png" alt="Santa Gift" class="decoracion santagift">
     </div>
+    <!-- Sección Juego 1 -->
+    <div id="juego1" class="juego-container oculto">
+        <button onclick="volver()">⬅ Volver</button>
+        <div class="juego-content">
+            <div class="juego-titulo">
+                <h2>Santa<br>Games</h2>
+                <img src="images/santa_with_deers.png" alt="Santa Icon" class="santa-icon">
+            </div>
+            <div class="juego-imagen">
+                <img src="images/game1_background.png" alt="Santa Wheelie Bike Challenge" class="juego2-img">
+            </div>
+            <div class="decoracion-juego">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+            </div>
+        </div>
+    </div>
 
+    <!-- Sección Juego 2 -->
+    <div id="juego2" class="juego-container oculto">
+        <button onclick="volver()">⬅ Volver</button>
+        <div class="juego-content">
+            <div class="juego-titulo">
+                <h2>Santa<br>Wheelie<br>Bike<br>Challenge</h2>
+                <img src="images/santa_with_snowman.png" alt="Santa Icon" class="santa-icon">
+            </div>
+            <div class="juego-imagen">
+                <img src="images/game2_background.png" alt="Santa Wheelie Bike Challenge" class="juego2-img">
+            </div>
+            <div class="decoracion-juego">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Juego 3 -->
+    <div id="juego3" class="juego-container oculto">
+        <button onclick="volver()">⬅ Volver</button>
+        <div class="juego-content">
+            <div class="juego-titulo">
+            <h2>Jewel <br>Christmas<br> Story</h2>
+            <img src="images/santa_with_deer.png" alt="Santa Icon" class="santa-icon">
+            </div>
+            <div class="juego-imagen">
+                <img src="images/game3_background.png" alt="Santa Wheelie Bike Challenge" class="juego2-img">
+            </div>
+            <div class="decoracion-juego">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+                <img src="images/gift_game2.png" alt="Gift Box" class="decoracion-gift">
+            </div>
+        </div>
+    </div>
 
     <!-- Popup de Inicio de Sesión -->
     <div id="login-popup" class="popup">

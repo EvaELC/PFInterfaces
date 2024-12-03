@@ -1293,7 +1293,9 @@ td, th {
     max-width: 1200px;
     margin: 10vh auto;
 }
-
+.oculto {
+    display: none;
+}
 .minijuegos-container h1 {
     font-size: 4rem; 
     margin-bottom: 5px;
@@ -1301,6 +1303,31 @@ td, th {
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
+.decoraciones-juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+}
+
+.decoracion-gift {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.decoracion-gift:hover {
+    transform: scale(1.1);
+}
+
+.santa-icon {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
 .minijuegos-container p {
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -1388,4 +1415,65 @@ td, th {
     bottom: 1%;
     right: 2%;
     width: 170px;
+}
+/* Juego 2:*/
+.juego-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.juego-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.juego-titulo h2 {
+    line-height: 1.2;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    word-wrap: break-word; 
+    margin-top: -20px;
+}
+
+.juego-imagen {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.juego2-img {
+    max-width: 100%;
+    height: auto;
+}
+/* Boton de volver */
+.juego-container button {
+    margin-left: 20px; 
+    margin-top: 10px;  
+}
+.decoracion-juego {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    padding-right: 10px; 
+    position: relative;
+    top: -10px; 
+}
+
+.decoracion-gift {
+    width: 130px;
+    height: auto;
+    
+}
+
+.santa-icon{
+    width:80%;
+    height: 80%;
 }
