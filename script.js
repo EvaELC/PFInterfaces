@@ -379,3 +379,15 @@ function volver() {
     document.getElementById("juego2").classList.add("oculto");
     document.getElementById("juego3").classList.add("oculto");
 }
+
+//implementacion para mostrar pagina de video especifico
+function mostrarVideo(videoId) {
+    document.getElementById("seccion-historia").classList.add("oculto");
+    document.getElementById(videoId).classList.remove("oculto");
+}
+
+function volverHistoria() {
+    document.getElementById("video1").classList.add("oculto");
+    document.getElementById("video2").classList.add("oculto");
+    document.getElementById("seccion-historia").classList.remove("oculto");
+}

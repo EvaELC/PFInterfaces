@@ -203,17 +203,13 @@
         </p>
         
         <div class="videos">
-            <div class="video">
+            <div class="video"onclick="mostrarVideo('video1')">
                 <h2>Descubriendo la Navidad: Orígenes y tradiciones</h2>
-                <a href="https://www.youtube.com/watch?v=nJ8BmK7mk8Q" target="_blank">
-                    <img src="images/youtube1.png" alt="Video 1">
-                </a>
+                <img src="images/youtube1.png" alt="Video 1">
             </div>
-            <div class="video">
+            <div class="video" onclick="mostrarVideo('video2')">
                 <h2>Curiosidades que no sabías sobre la Navidad</h2>
-                <a href="https://www.youtube.com/watch?v=nAb3kadfd4s" target="_blank">
                     <img src="images/youtube2.png" alt="Video 2">
-                </a>
             </div>
         </div>
         <div class="right-decoracion">
@@ -228,6 +224,43 @@
             </div>
             <div class="decoracion-row">
                 <img src="images/bola.png" alt="Bola de Navidad" class="decoracion bola-navidad">
+            </div>
+        </div>
+    </div>
+    <!-- Video 1 -->
+    <div id="video1" class="video-container oculto">
+        <button onclick="volverHistoria()">⬅ Volver</button>
+        <div class="video-content">
+            <div class="decoracion-candy left">
+                <img src="images/candycane.png" alt="Candy Cane" class="candy-cane">
+                <img src="images/candycane.png" alt="Candy Cane" class="candy-cane">
+            </div>
+            <video controls width="800">
+                <source src="video_youtube1.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+            <div class="decoracion-candy right">
+                <img src="images/candycane.png" alt="Candy Cane" class="candy-cane">
+                <img src="images/candycane.png" alt="Candy Cane" class="candy-cane">
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div id="video2" class="video-container oculto">
+        <button onclick="volverHistoria()">⬅ Volver</button>
+        <div class="video-content">
+            <div class="decoracion-candy left">
+                <img src="images/candycane.png" alt="Candy Cane" class="candy-cane">
+                <img src="images/candycane.png" alt="Candy Cane" class="candy-cane">
+            </div>
+            <video controls width="800">
+                <source src="video_youtube2.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+            <div class="decoracion-candy right">
+                <img src="images/candycane.png" alt="Candy Cane" class="candy-cane">
+                <img src="images/candycane.png" alt="Candy Cane" class="candy-cane">
             </div>
         </div>
     </div>

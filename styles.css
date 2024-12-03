@@ -552,6 +552,48 @@ label {
     font-size: 36px;
 }
 
+/* Historia: pagina especifica para videos */
+.video-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0; 
+}
+
+/* Video específico */
+.video-content video {
+    width: 90%; 
+    max-width: 900px;
+
+}
+.candy-cane {
+    width: 140px; 
+    height: auto;
+}
+.decoracion-candy {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centra los bastones verticalmente */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Aumenta la separación entre bastones */
+    z-index: 1;
+}
+
+.decoracion-candy.left {
+    left: -100px; 
+}
+
+.decoracion-candy.right {
+    right: -100px; 
+}
+
+
 /* Carta */
 .carta-container {
     width: 90%;
@@ -1490,7 +1532,7 @@ td, th {
     height: auto;
 }
 /* Boton de volver */
-.juego-container button {
+.juego-container button, .video-container button{
     margin-left: 20px; 
     margin-top: 10px;  
 }
@@ -1510,6 +1552,6 @@ td, th {
 }
 
 .santa-icon{
-    width:80%;
-    height: 80%;
+    width:170px;
+    height: 170px;
 }
