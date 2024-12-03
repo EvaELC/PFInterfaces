@@ -206,19 +206,19 @@
         <div class="postal-grid">
             <div class="postal-item">
                 <img src="images/postal1.png" alt="Postal 1" class="postal-img">
-                <button class="postal-btn">Seleccionar</button>
+                <button id="post-button1" class="postal-btn">Seleccionar</button>
             </div>
             <div class="postal-item">
                 <img src="images/postal2.png" alt="Postal 2" class="postal-img">
-                <button class="postal-btn">Seleccionar</button>
+                <button id="post-button2" class="postal-btn">Seleccionar</button>
             </div>
             <div class="postal-item">
                 <img src="images/postal3.png" alt="Postal 3" class="postal-img">
-                <button class="postal-btn">Seleccionar</button>
+                <button id="post-button3" class="postal-btn">Seleccionar</button>
             </div>
             <div class="postal-item">
                 <img src="images/postal4.png" alt="Postal 4" class="postal-img">
-                <button class="postal-btn">Seleccionar</button>
+                <button id="post-button4" class="postal-btn">Seleccionar</button>
             </div>
         </div>
         <div class="postal-continue">
@@ -236,10 +236,12 @@
             <img src="images/bola.png" alt="Bola 5" class="decorative-ball mid-right">
             <img src="images/bola.png" alt="Bola 6" class="decorative-ball bottom-right">
         </div>
+        <button id="back-button1" class="back-button1">←</button>
         <h1 class="postal-pnt-title">Paso 2: Para la parte de atrás, haz un dibujo y !súbelo!</h1>
         <div class="postal-submit">
-            <button class="img-btn">Seleccionar Imagen</button>
-            <img src="images/dibujo.png" alt="Dibujo" class="dibujo">
+            <input type="file" id="img-input" style="display: none;" accept="image/*">
+            <button class="img-btn" id="img-button">Seleccionar Imagen</button>
+            <img src="images/dibujo.jpg" alt="Dibujo" class="dibujo" id="dibujo-preview">
         </div>
         <div class="postal-continue">
             <button id="continue-button1">CONTINUAR →</button>
@@ -256,10 +258,11 @@
             <img src="images/bola.png" alt="Bola 5" class="decorative-ball mid-right">
             <img src="images/bola.png" alt="Bola 6" class="decorative-ball bottom-right">
         </div>
+        <button id="back-button2" class="back-button2">←</button>
         <h1 class="postal-fin-title">¡Así ha quedado tu postal!</h1>
         <div class="postales-fin">
-            <img src="images/postal3.png" alt="Postal 3" class="dibujo">
-            <img src="images/dibujo.png" alt="Dibujo" class="dibujo">
+            <img src="images/dibujo.jpg" alt="Postal Seleccionada" class="dibujo" id="postal-sel">
+            <img src="images/dibujo.jpg" alt="Dibujo Seleccionado" class="dibujo" id="dib-sel">
         </div>
         <div class="postal-continue">
             <button id="continue-button2">CONTINUAR →</button>
@@ -277,7 +280,7 @@
             <img src="images/bola.png" alt="Bola 6" class="decorative-ball bottom-right">
         </div>
         <h1 class="postal-info-title">Último paso: Introduce tu información</h1>
-        <form class="postal-form">
+        <form id="postal-form" class="postal-form">
             <div class="form-group">
                 <label for="direccion">Dirección</label>
                 <input type="text" id="direccion" placeholder="Dirección">
@@ -291,7 +294,7 @@
                 <input type="text" id="localidad" placeholder="Localidad">
             </div>
             
-            <button type="submit" class="postal-env">ENVIAR</button>
+            <button type="submit" id="env-button" class="postal-env">ENVIAR</button>
         </form>
     </div>
     
