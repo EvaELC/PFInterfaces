@@ -391,3 +391,159 @@ function volverHistoria() {
     document.getElementById("video2").classList.add("oculto");
     document.getElementById("seccion-historia").classList.remove("oculto");
 }
+
+/* ---------------------- Implementacion juego 3: (revisar)------------------------*/
+const boardWidth = 6;
+const boardHeight = 6;
+const jewels = ["jewel1.png", "jewel2.png", "jewel3.webp"];
+let board = [];
+let score = 0;
+
+const gameBoard = document.getElementById("game-board");
+const scoreDisplay = document.getElementById("score");
+
+// Create the board
+function createBoard() {
+    board = [];
+    gameBoard.innerHTML = ""; // Clear 
+    for (let i = 0; i < boardWidth * boardHeight; i++) {
+        const jewel = document.createElement("div");
+        jewel.classList.add("jewel");
+        const randomJewel = jewels[Math.floor(Math.random() * jewels.length)];
+        jewel.style.backgroundImage = `url('images/${randomJewel}')`;
+        jewel.setAttribute("data-id", i);
+        jewel.addEventListener("click", handleJewelClick);
+        board.push(jewel);
+        gameBoard.appendChild(jewel);
+    }
+}
+// Swap jewels
+let firstJewel = null;
+function handleJewelClick(e) {
+    const currentJewel = e.target;
+    if (!firstJewel) {
+        firstJewel = currentJewel;
+        firstJewel.style.border = "2px solid yellow";
+        return;
+    }
+    const firstId = parseInt(firstJewel.getAttribute("data-id"));
+    const currentId = parseInt(currentJewel.getAttribute("data-id"));
+
+    if (areAdjacent(firstId, currentId)) {
+        swapJewels(firstId, currentId);
+        if (!checkMatches()) {
+            // Revert swap if no matches
+            swapJewels(firstId, currentId);
+        }
+    }
+
+    firstJewel.style.border = "none";
+    firstJewel = null;
+}
+
+// Check if two jewels are adjacent
+function areAdjacent(id1, id2) {
+    const row1 = Math.floor(id1 / boardWidth);
+    const row2 = Math.floor(id2 / boardWidth);
+    const col1 = id1 % boardWidth;
+    const col2 = id2 % boardWidth;
+    return (row1 === row2 && Math.abs(col1 - col2) === 1) ||
+           (col1 === col2 && Math.abs(row1 - row2) === 1);
+}
+// Swap jewels 
+function swapJewels(id1, id2) {
+    const tempStyle = board[id1].style.backgroundImage;
+    board[id1].style.backgroundImage = board[id2].style.backgroundImage;
+    board[id2].style.backgroundImage = tempStyle;
+}
+// Check for matches
+function checkMatches() {
+    let foundMatches = false;
+    // Check rows
+    for (let row = 0; row < boardHeight; row++) {
+        for (let col = 0; col < boardWidth - 2; col++) {
+            const id = row * boardWidth + col;
+            if (isMatch(id, id + 1, id + 2)) {
+                foundMatches = true;
+                clearJewels(id, id + 1, id + 2);
+            }
+        }
+    }
+    // Check columns
+    for (let col = 0; col < boardWidth; col++) {
+        for (let row = 0; row < boardHeight - 2; row++) {
+            const id = row * boardWidth + col;
+            if (isMatch(id, id + boardWidth, id + 2 * boardWidth)) {
+                foundMatches = true;
+                clearJewels(id, id + boardWidth, id + 2 * boardWidth);
+            }
+        }
+    }
+    if (foundMatches) {
+        setTimeout(fillEmptySpaces, 500);
+    }
+    return foundMatches;
+}
+// Check if three jewels match
+function isMatch(id1, id2, id3) {
+    const style1 = board[id1]?.style.backgroundImage;
+    const style2 = board[id2]?.style.backgroundImage;
+    const style3 = board[id3]?.style.backgroundImage;
+    return style1 && style1 === style2 && style2 === style3;
+}
+// Clear jewels
+function clearJewels(...ids) {
+    ids.forEach(id => {
+        board[id].style.backgroundImage = "";
+    });
+    updateScore(ids.length);
+}
+// Update  score
+function updateScore(matches) {
+    score += matches +1;
+    scoreDisplay.textContent = score;
+
+    if (score >= 100) {
+        alert("Score = 100!!! You win!");
+        resetGame();
+    }
+}
+// Fill empty spaces
+function fillEmptySpaces() {
+    for (let col = 0; col < boardWidth; col++) {
+        for (let row = boardHeight - 1; row >= 0; row--) {
+            const id = row * boardWidth + col;
+            if (!board[id].style.backgroundImage) {
+                for (let aboveRow = row - 1; aboveRow >= 0; aboveRow--) {
+                    const aboveId = aboveRow * boardWidth + col;
+                    if (board[aboveId].style.backgroundImage) {
+                        board[id].style.backgroundImage = board[aboveId].style.backgroundImage;
+                        board[aboveId].style.backgroundImage = "";
+                        break;
+                    }
+                }
+            }
+        }
+        for (let row = 0; row < boardHeight; row++) {
+            const id = row * boardWidth + col;
+            if (!board[id].style.backgroundImage) {
+                const randomJewel = jewels[Math.floor(Math.random() * jewels.length)];
+                board[id].style.backgroundImage = `url('images/${randomJewel}')`;
+            }
+        }
+    }
+    // new matches
+    setTimeout(() => {
+        if (checkMatches()) {
+            setTimeout(fillEmptySpaces, 500);
+        }
+    }, 500);
+}
+// Reset 
+function resetGame() {
+    score = 0;
+    scoreDisplay.textContent = score;
+    createBoard();
+}
+document.addEventListener("DOMContentLoaded", createBoard);
+
