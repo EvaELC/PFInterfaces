@@ -584,9 +584,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     clearButton.addEventListener('click', function () {
-        tree.innerHTML = ''; // Clear all decorations on the tree
+        tree.innerHTML = '';
     });
-
+/*** Modificar! esta seccion no funciona. guardar arbol decorado en descargas */
     saveButton.addEventListener('click', function () {
         domtoimage.toPng(tree)
             .then(function (dataUrl) {
