@@ -367,8 +367,31 @@ label {
     display: grid; 
     grid-template-columns: repeat(2, 1fr);
     gap: 15px; 
-    margin-bottom: 80px;
     justify-items: center; 
+}
+
+.button-container-prof button {
+    width: 100%; 
+    max-width: 200px; 
+    padding: 10px; 
+    text-align: center;
+    font-size: 25px;
+    border: none;
+    color: white;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.santa-container {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.santa-renos-img {
+    width: 6000; 
+    height: 2000;
+    object-fit: contain; 
 }
 
 .profile-box img {
@@ -609,7 +632,9 @@ label {
     display: flex;           
     justify-content: center; 
     align-items: center;     
-    gap: 20px;               
+    gap: 20px;   
+    margin-top: 75px;     
+    margin-bottom: 25px;       
 }
 
 .titulo-carta h1 {
@@ -1096,11 +1121,12 @@ td, th {
 }
 
 .postal-img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    margin-bottom: 10px;
+    width: 285px; 
+    height: 170px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+
 }
 
 .postal-btn {
@@ -1113,6 +1139,7 @@ td, th {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-top: 15px
 }
 
 .postal-btn:hover {
@@ -1426,11 +1453,11 @@ td, th {
     display: flex;
     gap: 20px;
     justify-content: center;
-    overflow-x: auto;
     scroll-behavior: smooth;
     scrollbar-width: none; 
     width: 100%;
     max-width: 800px;
+    overflow: visible;
 }
 
 
@@ -1503,6 +1530,7 @@ td, th {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    margin-bottom: 35px;
 }
 
 .juego-titulo {
