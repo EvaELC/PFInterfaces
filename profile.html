@@ -183,7 +183,7 @@
 
     <!-- Postales -->
     <div id="postal-navidad" class="postal-container" style="display: none;">
-        <button onclick="volverHistoria()">⬅ Volver</button>
+        
         <div class="postal-header">
             <img src="images/bola.png" alt="Bola de Navidad" class="decoracion-item">
             <div class="postal-title-container">
@@ -199,114 +199,145 @@
     </div>
 
     
-    <div id="postal-seleccion" class="postal-step" style="display: none;">
-        <button onclick="volverHistoria()">⬅ Volver</button>
+    <div id="postal-seleccion" class="postal-select" style="display: none;">
         <div class="decorative-container">
-            <img src="images/bola.png" alt="Bola 0" class="decorative-ball top-left">
-            <img src="images/bola.png" alt="Bola 1" class="decorative-ball mid-left">
-            <img src="images/bola.png" alt="Bola 2" class="decorative-ball midmid-left">
-            <img src="images/bola.png" alt="Bola 3" class="decorative-ball bottom-left">
-            <img src="images/bola.png" alt="Bola 4" class="decorative-ball top-right">
-            <img src="images/bola.png" alt="Bola 5" class="decorative-ball mid-right">
-            <img src="images/bola.png" alt="Bola 6" class="decorative-ball bottom-right">
+            <div class="decorative-column">
+                <img src="images/bola.png" alt="Bola 0" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 1" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 2" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 3" class="decoracion-item">
+            </div> 
         </div>
-        <h1 class="postal-step-title">Paso 1: Selecciona el diseño de la postal</h1>
-        <div class="postal-grid">
-            <div class="postal-item">
-                <img src="images/postal1.png" alt="Postal 1" class="postal-img">
-                <button id="post-button1" class="postal-btn">Seleccionar</button>
+        <div class="postal-step">
+            <button id="back-button0" class="back-button0">←</button>
+            <h1 class="postal-step-title">Paso 1: Selecciona el diseño de la postal</h1>
+            <div class="postal-grid">
+                <div class="postal-item">
+                    <img src="images/postal1.png" alt="Postal 1" class="postal-img">
+                    <button id="post-button1" class="postal-btn">Seleccionar</button>
+                </div>
+                <div class="postal-item">
+                    <img src="images/postal2.png" alt="Postal 2" class="postal-img">
+                    <button id="post-button2" class="postal-btn">Seleccionar</button>
+                </div>
+                <div class="postal-item">
+                    <img src="images/postal3.png" alt="Postal 3" class="postal-img">
+                    <button id="post-button3" class="postal-btn">Seleccionar</button>
+                </div>
+                <div class="postal-item">
+                    <img src="images/postal4.png" alt="Postal 4" class="postal-img">
+                    <button id="post-button4" class="postal-btn">Seleccionar</button>
+                </div>
             </div>
-            <div class="postal-item">
-                <img src="images/postal2.png" alt="Postal 2" class="postal-img">
-                <button id="post-button2" class="postal-btn">Seleccionar</button>
-            </div>
-            <div class="postal-item">
-                <img src="images/postal3.png" alt="Postal 3" class="postal-img">
-                <button id="post-button3" class="postal-btn">Seleccionar</button>
-            </div>
-            <div class="postal-item">
-                <img src="images/postal4.png" alt="Postal 4" class="postal-img">
-                <button id="post-button4" class="postal-btn">Seleccionar</button>
-            </div>
+            
         </div>
         <div class="postal-continue">
             <button id="continue-button">CONTINUAR →</button>
         </div>
+        <div class="decorative-container">
+            <div class="decorative-column">
+                <img src="images/bola.png" alt="Bola 4" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 5" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 6" class="decoracion-item">
+            </div>
+        </div>
     </div>
     
-    <div id="postal-dib" class="postal-pnt" style="display: none;">
-        <button onclick="volverHistoria()" >⬅ Volver</button>
-        <div class="decorative-container">
-            <img src="images/bola.png" alt="Bola 0" class="decorative-ball top-left">
-            <img src="images/bola.png" alt="Bola 1" class="decorative-ball mid-left">
-            <img src="images/bola.png" alt="Bola 2" class="decorative-ball midmid-left">
-            <img src="images/bola.png" alt="Bola 3" class="decorative-ball bottom-left">
-            <img src="images/bola.png" alt="Bola 4" class="decorative-ball top-right">
-            <img src="images/bola.png" alt="Bola 5" class="decorative-ball mid-right">
-            <img src="images/bola.png" alt="Bola 6" class="decorative-ball bottom-right">
+    <div id="postal-dib" class="postal-global" style="display: none;">
+        <div class="decorative-containerr">
+            <div class="decorative-column">
+                <img src="images/bola.png" alt="Bola 0" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 1" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 2" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 3" class="decoracion-item">
+            </div> 
         </div>
-        <button id="back-button1" class="back-button1">←</button>
-        <h1 class="postal-pnt-title">Paso 2: Para la parte de atrás, haz un dibujo y !súbelo!</h1>
-        <div class="postal-submit">
-            <input type="file" id="img-input" style="display: none;" accept="image/*">
-            <button class="img-btn" id="img-button">Seleccionar Imagen</button>
-            <img src="images/dibujo.jpg" alt="Dibujo" class="dibujo" id="dibujo-preview">
+        <div class="postal-pnt">
+            <button id="back-button1" class="back-button1">←</button>
+            <h1 class="postal-pnt-title">Paso 2: Para la parte de atrás, haz un dibujo y !súbelo!</h1>
+            <div class="postal-submit">
+                <input type="file" id="img-input" style="display: none;" accept="image/*">
+                <button class="img-btn" id="img-button">Seleccionar Imagen</button>
+                <img src="images/dibujo.jpg" alt="Dibujo" class="dibujo" id="dibujo-preview">
+            </div>
         </div>
-        <div class="postal-continue">
+        <div class="postal-continue1">
             <button id="continue-button1">CONTINUAR →</button>
         </div>
+        <div class="decorative-containerr">
+            <div class="decorative-column">
+                <img src="images/bola.png" alt="Bola 4" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 5" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 6" class="decoracion-item">
+            </div>
+        </div>
     </div>
 
-    <div id="postal-final" class="postal-fin" style="display: none;">
-        <button onclick="volverHistoria()" >⬅ Volver</button>
-        <div class="decorative-container">
-            <img src="images/bola.png" alt="Bola 0" class="decorative-ball top-left">
-            <img src="images/bola.png" alt="Bola 1" class="decorative-ball mid-left">
-            <img src="images/bola.png" alt="Bola 2" class="decorative-ball midmid-left">
-            <img src="images/bola.png" alt="Bola 3" class="decorative-ball bottom-left">
-            <img src="images/bola.png" alt="Bola 4" class="decorative-ball top-right">
-            <img src="images/bola.png" alt="Bola 5" class="decorative-ball mid-right">
-            <img src="images/bola.png" alt="Bola 6" class="decorative-ball bottom-right">
+    <div id="postal-final" class="postal-global" style="display: none;">
+        <div class="decorative-containerr">
+            <div class="decorative-column">
+                <img src="images/bola.png" alt="Bola 0" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 1" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 2" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 3" class="decoracion-item">
+            </div> 
         </div>
-        <button id="back-button2" class="back-button2">←</button>
-        <h1 class="postal-fin-title">¡Así ha quedado tu postal!</h1>
-        <div class="postales-fin">
-            <img src="images/dibujo.jpg" alt="Postal Seleccionada" class="dibujo" id="postal-sel">
-            <img src="images/dibujo.jpg" alt="Dibujo Seleccionado" class="dibujo" id="dib-sel">
+        <div class="postal-fin">
+            <button id="back-button2" class="back-button2">←</button>
+            <h1 class="postal-fin-title">¡Así ha quedado tu postal!</h1>
+            <div class="postales-fin">
+                <img src="images/dibujo.jpg" alt="Postal Seleccionada" class="dibujo" id="postal-sel">
+                <img src="images/dibujo.jpg" alt="Dibujo Seleccionado" class="dibujo" id="dib-sel">
+            </div>
         </div>
-        <div class="postal-continue">
+        <div class="postal-continue2">
             <button id="continue-button2">CONTINUAR →</button>
         </div>
+        <div class="decorative-containerr">
+            <div class="decorative-column">
+                <img src="images/bola.png" alt="Bola 4" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 5" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 6" class="decoracion-item">
+            </div>
+        </div>
     </div>
 
-    <div id="postal-info" class="postal-info" style="display: none;">
-        <button onclick="volverHistoria()" >⬅ Volver</button>
-        <div class="decorative-container">
-            <img src="images/bola.png" alt="Bola 0" class="decorative-ball top-left">
-            <img src="images/bola.png" alt="Bola 1" class="decorative-ball mid-left">
-            <img src="images/bola.png" alt="Bola 2" class="decorative-ball midmid-left">
-            <img src="images/bola.png" alt="Bola 3" class="decorative-ball bottom-left">
-            <img src="images/bola.png" alt="Bola 4" class="decorative-ball top-right">
-            <img src="images/bola.png" alt="Bola 5" class="decorative-ball mid-right">
-            <img src="images/bola.png" alt="Bola 6" class="decorative-ball bottom-right">
+    <div id="postal-info" class="postal-global" style="display: none;">
+        <div class="decorative-containerr">
+            <div class="decorative-column">
+                <img src="images/bola.png" alt="Bola 0" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 1" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 2" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 3" class="decoracion-item">
+            </div> 
         </div>
-        <h1 class="postal-info-title">Último paso: Introduce tu información</h1>
-        <form id="postal-form" class="postal-form">
-            <div class="form-group">
-                <label for="direccion">Dirección</label>
-                <input type="text" id="direccion" placeholder="Dirección">
+        <div class="postal-info">
+            <button id="back-button3" class="back-button3">←</button>
+            <h1 class="postal-info-title">Último paso: Introduce tu información</h1>
+            <form id="postal-form" class="postal-form">
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" placeholder="Dirección">
+                </div>
+                <div class="form-group">
+                    <label for="codigo-postal">Código Postal</label>
+                    <input type="text" id="codigo-postal" placeholder="Código Postal">
+                </div>
+                <div class="form-group">
+                    <label for="localidad">Localidad</label>
+                    <input type="text" id="localidad" placeholder="Localidad">
+                </div>
+                
+                <button type="submit" id="env-button" class="postal-env">ENVIAR</button>
+            </form>
+        </div>
+        <div class="decorative-containerr">
+            <div class="decorative-column">
+                <img src="images/bola.png" alt="Bola 4" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 5" class="decoracion-item">
+                <img src="images/bola.png" alt="Bola 6" class="decoracion-item">
             </div>
-            <div class="form-group">
-                <label for="codigo-postal">Código Postal</label>
-                <input type="text" id="codigo-postal" placeholder="Código Postal">
-            </div>
-            <div class="form-group">
-                <label for="localidad">Localidad</label>
-                <input type="text" id="localidad" placeholder="Localidad">
-            </div>
-            
-            <button type="submit" id="env-button" class="postal-env">ENVIAR</button>
-        </form>
+        </div>
     </div>
     
 

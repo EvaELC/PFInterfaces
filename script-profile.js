@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     backButton.addEventListener('click', () => {
         cancionNavidad.style.display = 'none';
         calendario.style.display = 'flex';
+        audio.pause();        
+        audio.currentTime = 0;
+        playButton.textContent = '▶';
     });
 
     const audio = new Audio('happy-xmas.mp3'); 
@@ -76,8 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //comportamiento del botón de postales
 document.addEventListener('DOMContentLoaded', () => {
+    const backButton0 = document.getElementById('back-button0');
     const backButton1 = document.getElementById('back-button1');
     const backButton2 = document.getElementById('back-button2');
+    const backButton3 = document.getElementById('back-button3');
     const postalButton = document.getElementById('postal-button');
     const postNavidad = document.getElementById('postal-navidad');
     const profCont = document.getElementById('container-prof');
@@ -145,6 +150,11 @@ document.addEventListener('DOMContentLoaded', () => {
             let selectedPostal = "images/dibujo.jpg";
             let selectedDib = "images/dibujo.jpg";
 
+            backButton0.addEventListener('click', () => {
+                event.preventDefault();
+                postNavidad.style.display = 'flex';
+                postSel.style.display = 'none';
+            });
 
             postButton1.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -221,6 +231,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         event.preventDefault();
                         postInfo.style.display = 'flex'; 
                         postFin.style.display = 'none'; 
+
+
+                        backButton3.addEventListener('click', () => {
+                            event.preventDefault();
+                            postInfo.style.display = 'none';
+                            postFin.style.display = 'flex';
+                        });
+
                         envButton.addEventListener('click', (event) => {
                             event.preventDefault();
                             if (!validateForm()) {
