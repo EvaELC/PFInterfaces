@@ -24,6 +24,7 @@
             <li><a href="#seccion-historia"><img src="images/historia-icono.png" alt="Historia" class="icon"> Historia</a></li>
             <li><a href="#seccion-carta"><img src="images/carta-icono.png" alt="Carta" class="icon"> Carta</a></li>
             <li><a href="#minijuegos"><img src="images/minijuegos-icono.png" alt="Minijuegos" class="icon"> Minijuegos</a></li>
+            <li><a href="#galeria"><img src="images/galeria-icono.png" alt="Galeria" class="icon"> Galeria</a></li>
         </ul>
         <div class="auth-buttons">
             <a href="#sign-in" class="auth-btn">Iniciar sesión</a>
@@ -265,6 +266,7 @@
         </div>
     </div>
 
+
     <!-- Carta -->
     <div id="seccion-carta" class="carta-container">
         <div class="titulo-carta">
@@ -305,8 +307,13 @@
     
     <!-- Sección Minijuegos -->
     <div id="minijuegos" class="minijuegos-container">
+        <div class="decoraciones-contenedor">
+            <img src="images/mistletoe_rocket1.png" alt="Mistletoe Rocket 2" class="decoracion mistletoe1">
+            <img src="images/mistletoe_rocket2.png" alt="Mistletoe Rocket 2" class="decoracion mistletoe2">
+        </div>
         <h1>MINIJUEGOS</h1>
         <p>Selecciona el juego que más te guste</p>
+        
         <div class="minijuegos-slider">
             <div class="juegos-lista">
                 <div class="juego" onclick="mostrarJuego('juego1')">
@@ -323,17 +330,16 @@
                 </div>
             </div>
         </div>
-        <div class="separador">
-            <img src="images/separador_juego.png" alt="Separador de juegos" class="separador-juego">
-        </div>
 
         <!-- Decoración -->
-        <img src="images/mistletoe_rocket1.png" alt="Mistletoe Rocket 2" class="decoracion mistletoe1">
+        
+        
         <img src="images/ball_santa.png" alt="Santa Ball" class="decoracion santaball">
-        <img src="images/mistletoe_rocket2.png"alt="Mistletoe Rocket 2" class="decoracion mistletoe2">
+       
         <img src="images/gift_game.png" alt="Santa Gift" class="decoracion santagift">
     </div>
-
+    
+    
     <!-- Sección Juego 1 -->
     <div id="juego1" class="juego-container oculto">
         <button onclick="volver()">⬅ Volver</button>
@@ -401,7 +407,6 @@
             <h2>Jewel <br>Christmas<br> Story</h2>
             <img src="images/santa_with_deer.png" alt="Santa Icon" class="santa-icon">
             </div>
-           
             <div id="game-board"></div>
             <div id="score-board">
                 <p>Score: <span id="score">0</span></p>
@@ -476,9 +481,65 @@
         </div>
     </div>
     
+    
+    <!-- Sección Galería -->
+    <div id="galeria" class="galeria-container">  
+        <h1>Galería</h1>
+        <p>Explora nuestra colección de imágenes navideñas</p>
+        <div class="galeria-grid">
+            <div class="imagen" onclick="abrirImagen('images/galeria1.avif', 'Decoración Navideña')">
+                <img src="images/galeria1.avif" alt="Decoración Navideña">
+                <h2>Decoración Navideña</h2>
+            </div>
+            <div class="imagen" onclick="abrirImagen('images/galeria2.jpg', 'Familia')">
+                <img src="images/galeria2.jpg" alt="Familia">
+                <h2>Familia</h2>
+            </div>
+            <div class="imagen" onclick="abrirImagen('images/galeria3.webp', 'Muñeco de Nieve')">
+                <img src="images/galeria3.webp" alt="Muñeco de Nieve">
+                <h2>Muñeco de nieve</h2>
+            </div>
+            <div class="imagen" onclick="abrirImagen('images/galeria4.jpg', 'En asia')">
+                <img src="images/galeria4.jpg" alt="En asia">
+                <h2>Asia</h2>
+            </div>
+            <div class="imagen" onclick="abrirImagen('images/galeria5.png', 'Europa regalos')">
+                <img src="images/galeria5.png" alt="Europa regalos">
+                <h2>Europa regalos</h2>
+            </div>
+            <div class="imagen" onclick="abrirImagen('images/galeria6.jpg', 'Reno')">
+                <img src="images/galeria6.jpg" alt="Reno">
+                <h2>Regalos de Navidad</h2>
+            </div>
+            <div class="imagen" onclick="abrirImagen('images/galeria7.jpg', 'Villancicos')">
+                <img src="images/galeria7.jpg" alt="Villancicos">
+                <h2>Villancicos</h2>
+            </div>
+            <div class="imagen" onclick="abrirImagen('images/galeria8.avif', 'Papa Noel')">
+                <img src="images/galeria8.avif" alt="Papa Noel">
+                <h2>Arco de Luces</h2>
+            </div>
+            <div class="imagen" onclick="abrirImagen('images/galeria9.avif', 'Regalo')">
+                <img src="images/galeria9.avif" alt="Paisaje Regalo">
+                <h2>Paisaje Nevado</h2>
+            </div>
+        </div>
+        
+        <div class="separador">
+            <img src="images/separador_juego.png" alt="Separador de juegos" class="separador-juego">
+        </div>
+    </div>
+    
+    <!-- Modal para la imagen a pantalla completa -->
+    <div id="modalImagen" class="modal">
+        <span class="cerrar" onclick="cerrarImagen()">&times;</span>
+        <img class="modal-contenido" id="imagenAmpliada">
+        <div id="caption"></div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script defer src="script.js"></script>
 </body>
 </html>
+
 
 

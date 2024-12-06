@@ -1432,7 +1432,7 @@ td, th {
 .minijuegos-container {
     text-align: center;
     margin-top: 100px;
-    padding: 40px 20px;
+    padding: 80px 20px;
     background-color: #b91919; 
     border-radius: 10px;
     color: white;
@@ -1447,7 +1447,7 @@ td, th {
 .minijuegos-container h1 {
     font-size: 4rem; 
     margin-bottom: 5px;
-    margin-top: 0; 
+    margin-top: 50px; 
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
@@ -1540,6 +1540,13 @@ td, th {
     width: 600px; 
     height: 60px;
 }
+
+.decoraciones-contenedor {
+    margin-top: 20px; /* Añade espacio superior */
+    position: relative; /* Mantén las posiciones relativas de las decoraciones */
+}
+
+
 
 .mistletoe2 {
     top: 1%;
@@ -1788,3 +1795,112 @@ tree-area {
         padding: 3px; 
     }
 }
+
+/*--------------------------------Galería---------------------------------*/
+.galeria-container {
+    padding: 50px;
+    text-align: center;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.imagen {
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px black;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.imagen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px black;
+}
+
+.imagen img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.imagen h2 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* --------------------------Modal para imágenes en pantalla completa------------------- */
+.modal {
+    padding-top: 90px;
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black; 
+}
+
+.modal-contenido {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #b17373;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+
+@media (max-width: 600px) {
+    .galeria-grid {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+    .imagen {
+        max-width: 90%; 
+    }
+    .imagen h2 {
+        font-size: 0.9rem;
+    }
+    .galeria-container {
+        padding: 20px;
+    }
+    .modal-contenido {
+        width: 90%; 
+    }
+}
+
+
+
+
+

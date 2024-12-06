@@ -600,3 +600,18 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 });
+
+function abrirImagen(src, alt) {
+    const modal = document.getElementById('modalImagen');
+    const modalImg = document.getElementById('imagenAmpliada');
+    const captionText = document.getElementById('caption');
+
+    modal.style.display = "block";
+    modalImg.src = src;
+    captionText.textContent = alt;
+}
+
+function cerrarImagen() {
+    const modal = document.getElementById('modalImagen');
+    modal.style.display = "none";
+}
