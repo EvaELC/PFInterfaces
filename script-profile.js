@@ -10,6 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//comportamiento del botón de reserva
+document.addEventListener('DOMContentLoaded', () => {
+    const reservaButton = document.getElementById('reserva-button');
+    const reservaCasas = document.getElementById('reserva-casas');
+    const profCont = document.getElementById('container-prof');
+
+
+    reservaButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        reservaCasas.style.display = 'flex'; 
+        profCont.style.display = 'none';
+    });
+});
+
 //comportamiento del botón de calendario
 document.addEventListener('DOMContentLoaded', () => {
     const calendarButton = document.getElementById('calendar-button');
