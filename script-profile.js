@@ -15,13 +15,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const reservaButton = document.getElementById('reserva-button');
     const reservaCasas = document.getElementById('reserva-casas');
     const profCont = document.getElementById('container-prof');
-
+    const reservaButton1 = document.getElementById('res-button1');
+    const reservaButton2 = document.getElementById('res-button2');
+    const Casa1 = document.getElementById('res-casa1');
+    const Casa2 = document.getElementById('res-casa2');
+    const backButton4 = document.getElementById('back-button4');
+    const backButton5 = document.getElementById('back-button5');
 
     reservaButton.addEventListener('click', (event) => {
         event.preventDefault();
         reservaCasas.style.display = 'flex'; 
         profCont.style.display = 'none';
+
+        reservaButton1.addEventListener('click', (event) => {
+            event.preventDefault();
+            reservaCasas.style.display = 'none'; 
+            Casa1.style.display = 'flex';
+            
+            backButton4.addEventListener('click', () => {
+                Casa1.style.display = 'none';
+                reservaCasas.style.display = 'flex';
+            });
+
+        });
+
+        reservaButton2.addEventListener('click', (event) => {
+            event.preventDefault();
+            reservaCasas.style.display = 'none'; 
+            Casa2.style.display = 'flex';
+
+            backButton5.addEventListener('click', () => {
+                Casa2.style.display = 'none';
+                reservaCasas.style.display = 'flex';
+            });
+        });
     });
+
+
 });
 
 //comportamiento del botón de calendario

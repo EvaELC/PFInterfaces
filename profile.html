@@ -343,16 +343,83 @@
         </div>
     </div>
     
+    <!-- Reservas -->
     <div id="reserva-casas" class="reserva-global" style="display: none;">
         <div class="reserva-casa">
+<<<<<<< HEAD
             <button id="back-button4" class="back-button">⬅ Volver</button>
+=======
+>>>>>>> 2f74118 (Reserva - Final)
             <h1 class="reserva-title">Elige las casas a reservar</h1>
             <div class="reservas">
-                <img src="images/casa1.jpg" alt="Casa 1" class="casa" id="casa-1">
-                <img src="images/casa2.jpg" alt="Casa 2" class="casa" id="casa-2">
+                <img src="images/casa1.jpg" alt="Casa 1" class="casa" id="casa-1">                
+                <img src="images/casa2.jpg" alt="Casa 2" class="casa" id="casa-2"> 
             </div>
-        </div>
+            <div class="res-botones">
+                <button id="res-button1" class="res-btn">Seleccionar</button>
+                <button id="res-button2" class="res-btn">Seleccionar</button>
+            </div> 
+        </div> 
+    </div>
+
+    <div id="res-casa1" class="res1-global" style="display: none;">
+        <div class="reserva-casa1">
+            <h1 class="res-casa1-title">Introduce los datos para reservar:</h1>
+            <form id="res1-form"  class="res-form">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="res1-nombre" placeholder="Nombre">
+                
+                <label for="correo">Correo Electrónico</label>
+                <input type="text" id="res1-correo" placeholder="Correo Electrónico">
+                
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="res1-telefono" placeholder="Teléfono">
+                
+                <label for="noches">Número de noches</label>
+                <input type="text" id="res1-noches" placeholder="Número de noches">
+                
+                <button type="submit" id="env-res1">RESERVAR</button> 
+            </form>
         
+        </div>
+        <div class="res-info">
+            <h2 class="res-casa-title">Xmas Hotel</h2>
+            <p>Plaza Santa Ana, 14, Madrid, España</p>
+            <p>Incluye desayuno</p>
+            <p>130€ por noche</p>
+            <p>Impuestos y cargos: 13€</p>
+            <p>Se realiza el pago en el lugar</p>
+        </div>
+    </div>
+
+    <div id="res-casa2" class="res2-global" style="display: none;">
+        <div class="reserva-casa2">
+            <h1 class="res-casa2-title">Introduce los datos para reservar:</h1>
+            <form id="res2-form"  class="res-form">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="res2-nombre" placeholder="Nombre">
+                
+                <label for="correo">Correo Electrónico</label>
+                <input type="text" id="res2-correo" placeholder="Correo Electrónico">
+                
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="res2-telefono" placeholder="Teléfono">
+                
+                <label for="noches">Número de noches</label>
+                <input type="text" id="res2-noches" placeholder="Número de noches">
+                
+                <button type="submit" id="env-res2">RESERVAR</button> 
+            </form>
+        
+        </div>
+        <div class="res-info">
+            <h2 class="res-casa-title">Santa Santa Hotel</h2>
+            <p>Calle de Hermosilla 2, Madrid, España</p>
+            <p>Incluye desayuno y parking</p>
+            <p>160€ por noche</p>
+            <p>Impuestos y cargos: 13€</p>
+            <p>Se realiza el pago en el lugar</p>
+        </div>
     </div>
 
     <script defer src="script-profile.js"></script>
