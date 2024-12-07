@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const envButton2 = document.getElementById('env-res2');
     const resForm1 = document.getElementById('res1-form');
     const resForm2 = document.getElementById('res2-form');
+    const backButton7 = document.getElementById('back-button7');
+    const backButton8 = document.getElementById('back-button8');
 
     const modal = document.getElementById('modal');
     const modalMessage = document.getElementById('modal-message');
@@ -86,6 +88,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return true;
     }
+
+    backButton7.addEventListener('click', () => {
+        event.preventDefault();
+        Casa1.style.display = 'none';
+        reservaCasas.style.display = 'flex';
+    });
+
+    backButton8.addEventListener('click', () => {
+        event.preventDefault();
+        Casa2.style.display = 'none';
+        reservaCasas.style.display = 'flex';
+    });
 
     reservaButton.addEventListener('click', (event) => {
         event.preventDefault();
