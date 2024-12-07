@@ -273,6 +273,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const backByButtonRes = document.getElementById('back-button4');
+    const backButtonCalendar = document.getElementById('back-button5');
+    const backButtonPostal = document.getElementById('back-button6');
+
+        backByButtonRes.addEventListener('click', () => {
+            window.location.href = 'profile.html';
+        });
+        
+        backButtonCalendar.addEventListener('click', () => {
+            window.location.href = 'profile.html';
+        });
+
+        backButtonPostal.addEventListener('click', () => {
+            window.location.href = 'profile.html';
+        });
+});
+
+
 //comportamiento actualización de perfil
 document.addEventListener('DOMContentLoaded', () => {
     const profilePopup = document.getElementById('profile-popup');
@@ -396,3 +415,5 @@ document.addEventListener('DOMContentLoaded', () => {
         return emailRegex.test(email);
     }
 });
+
+

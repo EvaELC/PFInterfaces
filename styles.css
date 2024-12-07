@@ -967,19 +967,19 @@ td, th {
 .back-button {
     background-color: #1c6915;
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 18px;
     border: none;
     border-radius: 5px;
-    width: 180px;
-    height: 55px;
+    width: 160px;
+    height: 40px;
     cursor: pointer;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 450px;
-    top: 135px;
+    left: 80px;
+    top: 170px;
 } 
 
 .postal-container {
