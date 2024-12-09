@@ -15,13 +15,127 @@ document.addEventListener('DOMContentLoaded', () => {
     const reservaButton = document.getElementById('reserva-button');
     const reservaCasas = document.getElementById('reserva-casas');
     const profCont = document.getElementById('container-prof');
+    const reservaButton1 = document.getElementById('res-button1');
+    const reservaButton2 = document.getElementById('res-button2');
+    const Casa1 = document.getElementById('res-casa1');
+    const Casa2 = document.getElementById('res-casa2');
+    const envButton1 = document.getElementById('env-res1');
+    const envButton2 = document.getElementById('env-res2');
+    const resForm1 = document.getElementById('res1-form');
+    const resForm2 = document.getElementById('res2-form');
+    const backButton7 = document.getElementById('back-button7');
+    const backButton8 = document.getElementById('back-button8');
 
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modal-message');
+    const modalConfirm = document.getElementById('modal-confirm');
+    const modalCancel = document.getElementById('modal-cancel');
+    let modalAction = null;
+
+    function infoModal(message, action) {
+        modalMessage.textContent = message;
+        modal.style.display = 'flex';
+        modalCancel.style.display = 'none';
+        modalAction = action;
+    }
+
+    function validateForm1() {
+        const nombre = document.getElementById('res1-nombre').value.trim();
+        const correo = document.getElementById('res1-correo').value.trim();
+        const telefono = document.getElementById('res1-telefono').value.trim();
+        const noches = document.getElementById('res1-noches').value.trim();
+
+        if (nombre.length < 3) {
+            infoModal("El nombre debe tener al menos 3 caracteres.");
+            return false;
+        }
+        if (correo.length < 3) {
+            infoModal("El correo debe tener al menos 3 caracteres.");
+            return false;
+        }
+        if (telefono.length < 9) {
+            infoModal("El telefono debe tener al menos 9 caracteres.");
+            return false;
+        }
+        if (noches.length < 3) {
+            infoModal("El numero de noches debe tener al menos 3 caracteres.");
+            return false;
+        }
+        return true;
+    }
+
+    function validateForm2() {
+        const nombre = document.getElementById('res2-nombre').value.trim();
+        const correo = document.getElementById('res2-correo').value.trim();
+        const telefono = document.getElementById('res2-telefono').value.trim();
+        const noches = document.getElementById('res2-noches').value.trim();
+
+        if (nombre.length < 3) {
+            infoModal("El nombre debe tener al menos 3 caracteres.");
+            return false;
+        }
+        if (correo.length < 3) {
+            infoModal("El correo debe tener al menos 3 caracteres.");
+            return false;
+        }
+        if (telefono.length < 9) {
+            infoModal("El telefono debe tener al menos 9 caracteres.");
+            return false;
+        }
+        if (noches.length < 3) {
+            infoModal("El número de noches no puede estar vacío.");
+            return false;
+        }
+        return true;
+    }
+
+    backButton7.addEventListener('click', () => {
+        event.preventDefault();
+        Casa1.style.display = 'none';
+        reservaCasas.style.display = 'flex';
+    });
+
+    backButton8.addEventListener('click', () => {
+        event.preventDefault();
+        Casa2.style.display = 'none';
+        reservaCasas.style.display = 'flex';
+    });
 
     reservaButton.addEventListener('click', (event) => {
         event.preventDefault();
         reservaCasas.style.display = 'flex'; 
         profCont.style.display = 'none';
-    });
+
+        reservaButton1.addEventListener('click', (event) => {
+            event.preventDefault();
+            reservaCasas.style.display = 'none'; 
+            Casa1.style.display = 'flex';
+
+            envButton1.addEventListener('click', (event) => {
+                event.preventDefault();
+                if (validateForm1()) {
+                    infoModal("Hotel reservado correctamente!", () => {
+                    });
+                    resForm1.reset();
+                }      
+            });   
+        });
+
+        reservaButton2.addEventListener('click', (event) => {
+            event.preventDefault();
+            reservaCasas.style.display = 'none'; 
+            Casa2.style.display = 'flex';
+
+            envButton2.addEventListener('click', (event) => {
+                event.preventDefault();
+                if (!validateForm2()) {
+                    infoModal("Hotel reservado correctamente!", () => {
+                    });
+                    resForm2.reset();
+                }
+            });  
+        });
+    });   
 });
 
 //comportamiento del botón de calendario
