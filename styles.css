@@ -1227,6 +1227,11 @@ td, th {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+.selected {
+    background-color: #3f8d3f; 
+}
+
+
 .dibujo {
     width: 600px;
     height:400px;
