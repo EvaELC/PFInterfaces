@@ -592,7 +592,7 @@ label {
     justify-content: center;
     align-items: center;
     position: relative;
-    gap: 20px;
+    gap: 0px;
     width: 100%;
     max-width: 1200px;
     margin: auto;
@@ -615,9 +615,10 @@ label {
 
 }
 .candy-cane {
-    width: 120px; 
+    width: 100px; 
     height: auto;
 }
+
 .decoracion-candy {
     position: absolute;
     top: 50%;
@@ -629,11 +630,11 @@ label {
 }
 
 .decoracion-candy.left {
-    left: -100px; 
+    left: -20px; 
 }
 
 .decoracion-candy.right {
-    right: -100px; 
+    right: -20px; 
 }
 
 
@@ -1096,20 +1097,10 @@ td, th {
     width: 100%;
 }
 
-.decorative-containerr {
-    display: flex;
-    align-items: flex-start; 
-    justify-content: flex-start;
-    width: auto; 
-    height: 100%; 
-    margin-left: 200px; 
-    margin-right: 250px; 
-}
-
 .postal-global{
     flex-direction: row; 
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 }
 
@@ -1175,22 +1166,14 @@ td, th {
 
 .postal-continue {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-start; 
     width: 3%; 
     margin-top: 35%;
 }
 
-.postal-continue1 {
-    display: flex;
-    justify-content: flex-end; 
-    width: 3%; 
-    margin-top: 40%;
-    margin-left: 125px;
-}
-
 .postal-continue2 {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-start; 
     width: 3%; 
     margin-top: 23%;
 }
@@ -1205,6 +1188,7 @@ td, th {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    right: -100px;
     
 }
 
@@ -1219,13 +1203,12 @@ td, th {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: #b91919;
     color: white;
     padding: 20px;
     border-radius: 15px;
-    margin: 150px auto;
-    width: 75%;
+    margin-top: 150px;
+    width: 50%;
     text-align: center;
 }
 
@@ -1239,7 +1222,7 @@ td, th {
 }
 
 .postal-pnt-title {
-    font-size: 2.0rem;
+    font-size: 2.5rem;
     margin-bottom: 30px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -1273,14 +1256,12 @@ td, th {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: #b91919;
     color: white;
     padding: 20px;
     border-radius: 15px;
-    margin: 150px auto;
-    width: 100%;
-    max-width: 1200px;
+    margin-top: 150px;
+    width: 50%;
     text-align: center;
 }
 
@@ -1298,6 +1279,7 @@ td, th {
     margin-bottom: 160px;
     width: 100%;
     max-width: 800px;
+    padding-top: 70px
 }
 
 .postales-fin img {
@@ -1311,15 +1293,14 @@ td, th {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: #b91919;
     color: white;
     padding: 20px;
     border-radius: 15px;
-    margin: 150px auto;
-    width: 90%;
-    max-width: 1200px;
+    margin-top: 150px;
+    width: 50%;
     text-align: center;
+    padding: 40px;
 }
 
 .postal-info-title {
@@ -1336,7 +1317,9 @@ td, th {
     gap: 45px;
     width: 100%;
     max-width: 600px;
-    margin: 60px;
+    margin-top: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
     margin-bottom: 150px;
 }
 
@@ -1353,7 +1336,7 @@ td, th {
 }
 
 .form-group input {
-    width: 500px;
+    width: 400px;
     padding: 10px;
     font-size: 1rem;
     border: 2px solid #ddd;
@@ -1904,45 +1887,7 @@ tree-area {
     height: auto;
 }
 
-/* Media Queries para Responsividad */
-@media screen and (max-width: 768px) {
-    .calendario-wrapper {
-        max-width: 90%; 
-    }
-
-    .calendario-dias {
-        top: 12%; 
-        left: 5%; 
-        width: 90%; 
-        height: auto; 
-    }
-
-    .calendario-dias th,
-    .calendario-dias td {
-        font-size: 0.9rem; 
-        padding: 5px; 
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .calendario-wrapper {
-        max-width: 100%; 
-    }
-
-    .calendario-dias {
-        top: 14%; 
-        left: 3%;
-        width: 94%; 
-    }
-
-    .calendario-dias th,
-    .calendario-dias td {
-        font-size: 0.8rem; 
-        padding: 3px; 
-    }
-}
-
-/*--------------------------------Galería---------------------------------*/
+/* Galería */
 .galeria-container {
     padding: 50px;
     text-align: center;
@@ -1994,7 +1939,7 @@ tree-area {
 }
 
 
-/* --------------------------Modal para imágenes en pantalla completa------------------- */
+/* Modal para imágenes en pantalla completa */
 .modal-img {
     padding-top: 90px;
     display: none; 
@@ -2036,6 +1981,8 @@ tree-area {
     font-size: 18px;
 }
 
+/* RESPONSIVE */
+
 /* Breakpoint para tablet (768px) */
 @media screen and (max-width: 768px){
     .galeria-grid {
@@ -2047,6 +1994,71 @@ tree-area {
     }
     .galeria-container {
         padding: 30px;
+    }
+    .calendario-wrapper {
+        max-width: 90%; 
+    }
+
+    .calendario-dias {
+        top: 12%; 
+        left: 5%; 
+        width: 90%; 
+        height: auto; 
+    }
+
+    .calendario-dias th,
+    .calendario-dias td {
+        font-size: 0.9rem; 
+        padding: 5px; 
+    }
+
+    /* Botones */
+    .back-button {
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .postal-btn, .res-btn {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+
+    /* Títulos */
+    .postal-title, .reserva-title {
+        font-size: 2rem; /* Reducir tamaño de títulos */
+    }
+
+    .postal-subtitle, .res-casa-title {
+        font-size: 1rem;
+    }
+
+    /* Contenedores */
+    .postal-container, .reserva-casa, .minijuegos-container {
+        width: 95%; /* Ajustar contenedores al ancho de pantalla */
+        padding: 15px;
+    }
+
+    .postal-grid, .res-form {
+        display: flex; /* Cambiar de grid a flexbox */
+        flex-direction: column; /* Una sola columna */
+        gap: 20px; /* Espacio entre elementos */
+    }
+
+    /* Imágenes */
+    .postal-img, .juego img, .casa {
+        width: 100%; /* Ajustar imágenes al contenedor */
+        height: auto;
+    }
+
+    /* Formularios */
+    .res-form input, .form-group input {
+        width: 100%; /* Inputs ocupan todo el ancho */
+        font-size: 1rem;
+    }
+
+    .postal-env {
+        font-size: 1rem; /* Botón enviar más pequeño */
     }
 }
 
@@ -2067,5 +2079,63 @@ tree-area {
     }
     .modal-contenido {
         width: 90%;
+    }
+    .calendario-wrapper {
+        max-width: 100%; 
+    }
+
+    .calendario-dias {
+        top: 14%; 
+        left: 3%;
+        width: 94%; 
+    }
+
+    .calendario-dias th,
+    .calendario-dias td {
+        font-size: 0.8rem; 
+        padding: 3px; 
+    }
+
+    /* Botones */
+    .back-button {
+        width: 150px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .postal-btn, .res-btn {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+    }
+
+    /* Títulos */
+    .postal-title, .reserva-title {
+        font-size: 2.5rem; /* Títulos medianos */
+    }
+
+    .postal-subtitle, .res-casa-title {
+        font-size: 1.2rem;
+    }
+
+    /* Contenedores */
+    .postal-container, .reserva-casa, .minijuegos-container {
+        width: 90%; /* Contenedores más anchos */
+        padding: 20px;
+    }
+
+    .postal-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        gap: 20px;
+    }
+
+    .res-form {
+        grid-template-columns: 1fr 1fr; /* Formularios en dos columnas */
+        gap: 15px;
+    }
+
+    /* Imágenes */
+    .postal-img, .juego img, .casa {
+        width: 100%; /* Imágenes se ajustan */
+        height: auto;
     }
 }

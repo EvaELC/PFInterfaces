@@ -272,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return true;
     }
 
-    
 
     postalButton.addEventListener('click', (event) => {
         event.preventDefault();
