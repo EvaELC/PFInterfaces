@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', function () {
     clearButton.addEventListener('click', function () {
         tree.innerHTML = '';
     });
-/*** Modificar! esta seccion no funciona. guardar arbol decorado en descargas */
+/* esta seccion no funciona. guardar arbol decorado en descargas */
     saveButton.addEventListener('click', function () {
         domtoimage.toPng(tree)
             .then(function (dataUrl) {
@@ -615,3 +615,15 @@ function cerrarImagen() {
     const modal = document.getElementById('modalImagen');
     modal.style.display = "none";
 }
+
+/* make buttons active in nav bar*/
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".navbar-links a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.forEach(link => link.classList.remove("active"));
+            // clase activa en boton seleccionado
+            this.classList.add("active");
+        });
+    });
+});

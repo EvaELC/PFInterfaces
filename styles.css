@@ -67,6 +67,10 @@ body {
     width: 40px;
     margin-right: 10px;
 }
+.navbar-links a.active {
+    color: #000000;
+}
+
 
 .auth-buttons {
     padding-right: 20px;
