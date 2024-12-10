@@ -14,7 +14,7 @@ body {
     
 }
 
-/* Barra de navegación */
+/* Barra de navegaión */
 .navbar {
     background-color: #386624; 
     padding: 10px 0;
@@ -2080,6 +2080,7 @@ tree-area {
 
 /* Breakpoint para tablet (768px) */
 @media screen and (max-width: 768px){
+
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
@@ -2168,6 +2169,7 @@ tree-area {
 
 /* Breakpoint para móvil (600px) */
 @media screen and (max-width: 600px) {
+    
     .galeria-grid {
         grid-template-columns: 1fr;
         gap: 10px;
@@ -2241,5 +2243,134 @@ tree-area {
     .postal-img, .juego img, .casa {
         width: 100%; /* Imágenes se ajustan */
         height: auto;
+    }
+}
+
+
+@media (max-width: 900px) {
+    
+    body {
+    padding-top: 500px; /* Ajusta el espacio para que el contenido no se superponga al navbar */
+    }
+
+/* Ajuste para desplazamiento correcto */
+    html {
+    scroll-padding-top: 500px; /* Ajusta el desplazamiento al hacer clic en los enlaces para que no se tape */
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar-links li {
+        margin: 10px 0;
+    }
+
+    .logo-img {
+        width: 70px; /* Tamaño más pequeño para el logo */
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 15px;
+    }
+
+    .home {
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1.2rem;
+    }
+
+    .mapa-container {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .point {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tooltip {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 300px;
+        }/* Sin este código el navegador me tapa el contenido*/
+
+    html {
+    scroll-padding-top: 400px; 
+    }/* Sin este código el navegador me tapa el contenido*/
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-links li {
+        margin: 5px 0;
+    }
+
+    .logo-img {
+        width: 60px; 
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .home {
+        padding: 10px;
+        background-position: center;
+        text-align: center;
+        height: auto; 
+        padding-top: 80px; 
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }
