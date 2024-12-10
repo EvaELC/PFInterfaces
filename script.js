@@ -392,7 +392,7 @@ function volverHistoria() {
     document.getElementById("seccion-historia").classList.remove("oculto");
 }
 
-/* ---------------------- Implementacion juego 3: (revisar)------------------------*/
+/* ---------------------- Implementacion juego 3------------------------*/
 const boardWidth = 6;
 const boardHeight = 6;
 const jewels = ["jewel1.png", "jewel2.png", "jewel3.webp"];

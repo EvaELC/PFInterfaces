@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//comportamiento del botón de reserva
+//comportamiento del botón de reservas
 document.addEventListener('DOMContentLoaded', () => {
     const reservaButton = document.getElementById('reserva-button');
     const reservaCasas = document.getElementById('reserva-casas');
@@ -37,13 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'flex';
         modalCancel.style.display = 'none';
         modalAction = action;
+
+        modalConfirm.addEventListener('click', () => {
+            if (modalAction) {
+                modalAction();  
+            }
+        });
     }
 
-    function validateForm1() {
-        const nombre = document.getElementById('res1-nombre').value.trim();
-        const correo = document.getElementById('res1-correo').value.trim();
-        const telefono = document.getElementById('res1-telefono').value.trim();
-        const noches = document.getElementById('res1-noches').value.trim();
+    function validateForm(formId) {
+        const nombre = document.getElementById(`${formId}-nombre`).value.trim();
+        const correo = document.getElementById(`${formId}-correo`).value.trim();
+        const telefono = document.getElementById(`${formId}-telefono`).value.trim();
+        const noches = document.getElementById(`${formId}-noches`).value.trim();
 
         if (nombre.length < 3) {
             infoModal("El nombre debe tener al menos 3 caracteres.");
@@ -54,35 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
         if (telefono.length < 9) {
-            infoModal("El telefono debe tener al menos 9 caracteres.");
+            infoModal("El teléfono debe tener al menos 9 caracteres.");
             return false;
         }
-        if (noches.length < 3) {
-            infoModal("El numero de noches debe tener al menos 3 caracteres.");
-            return false;
-        }
-        return true;
-    }
-
-    function validateForm2() {
-        const nombre = document.getElementById('res2-nombre').value.trim();
-        const correo = document.getElementById('res2-correo').value.trim();
-        const telefono = document.getElementById('res2-telefono').value.trim();
-        const noches = document.getElementById('res2-noches').value.trim();
-
-        if (nombre.length < 3) {
-            infoModal("El nombre debe tener al menos 3 caracteres.");
-            return false;
-        }
-        if (correo.length < 3) {
-            infoModal("El correo debe tener al menos 3 caracteres.");
-            return false;
-        }
-        if (telefono.length < 9) {
-            infoModal("El telefono debe tener al menos 9 caracteres.");
-            return false;
-        }
-        if (noches.length < 3) {
+        if (noches.length === 0) {
             infoModal("El número de noches no puede estar vacío.");
             return false;
         }
@@ -90,13 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     backButton7.addEventListener('click', () => {
-        event.preventDefault();
         Casa1.style.display = 'none';
         reservaCasas.style.display = 'flex';
     });
 
     backButton8.addEventListener('click', () => {
-        event.preventDefault();
         Casa2.style.display = 'none';
         reservaCasas.style.display = 'flex';
     });
@@ -113,12 +92,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             envButton1.addEventListener('click', (event) => {
                 event.preventDefault();
-                if (validateForm1()) {
-                    infoModal("Hotel reservado correctamente!", () => {
+                if (validateForm('res1')) {
+                    const nombre = document.getElementById('res1-nombre').value;
+                    const correo = document.getElementById('res1-correo').value;
+                    const telefono = document.getElementById('res1-telefono').value;
+                    const noches = document.getElementById('res1-noches').value;
+                    const reserva = `Reserva en Xmas Hotel- ${noches} noches, ${nombre}, ${correo}, ${telefono}`;
+                    
+                    // Guardar la reserva en localStorage
+                    const reservations = JSON.parse(localStorage.getItem('reservations')) || [];
+                    reservations.push(reserva);
+                    localStorage.setItem('reservations', JSON.stringify(reservations));
+
+                    infoModal("Reserva realizada correctamente!", () => {
+                        window.location.href = 'profile.html';
                     });
                     resForm1.reset();
                 }      
-            });   
+            });     
         });
 
         reservaButton2.addEventListener('click', (event) => {
@@ -128,15 +119,80 @@ document.addEventListener('DOMContentLoaded', () => {
 
             envButton2.addEventListener('click', (event) => {
                 event.preventDefault();
-                if (!validateForm2()) {
-                    infoModal("Hotel reservado correctamente!", () => {
+                if (validateForm('res2')) {
+                    const nombre = document.getElementById('res2-nombre').value;
+                    const correo = document.getElementById('res2-correo').value;
+                    const telefono = document.getElementById('res2-telefono').value;
+                    const noches = document.getElementById('res2-noches').value;
+                    const reserva = `Reserva en Santa Santa Hotel - ${noches} noches, ${nombre}, ${correo}, ${telefono}`;
+
+                    // Guardar la reserva en localStorage
+                    const reservations = JSON.parse(localStorage.getItem('reservations')) || [];
+                    reservations.push(reserva);
+                    localStorage.setItem('reservations', JSON.stringify(reservations));
+
+                    infoModal("Reserva realizada correctamente!", () => {
+                        window.location.href = 'profile.html';
                     });
                     resForm2.reset();
                 }
             });  
         });
     });   
+
+    // Mostrar y actualizar las reservas
+    const viewReservationsButton = document.getElementById("view-reservations-button");
+    const reservationsModal = document.getElementById("reservations-modal");
+    const closeReservationsModal = document.getElementById("close-reservations-modal");
+    const reservationsList = document.getElementById("reservations-list");
+    const modalContent = document.getElementById("modal-res-content");
+
+    viewReservationsButton.addEventListener("click", () => {
+        updateReservationsList();
+        reservationsModal.style.display = "flex"; 
+    });
+
+    closeReservationsModal.addEventListener("click", () => {
+        reservationsModal.style.display = "none";
+    });
+
+    reservationsModal.addEventListener('click', (event) => {
+        if (event.target === reservationsModal) {  
+            reservationsModal.style.display = 'none';  
+        }
+    });
+
+    modalContent.addEventListener('click', (event) => {
+        event.stopPropagation(); 
+    });
+
+    function updateReservationsList() {
+        reservationsList.innerHTML = "";
+
+        const reservations = JSON.parse(localStorage.getItem('reservations')) || [];
+
+        if (reservations.length === 0) {
+            reservationsList.innerHTML = "<p>No tienes reservas actualmente.</p>";
+        } else {
+            reservations.forEach((reservation) => {
+                const reservationCard = document.createElement("div");
+                reservationCard.classList.add("reservation-card");
+
+                const details = document.createElement("div");
+                details.classList.add("reservation-details");
+
+                const reservationText = document.createElement("p");
+                reservationText.textContent = reservation;
+                details.appendChild(reservationText);
+
+                reservationCard.appendChild(details);
+                reservationsList.appendChild(reservationCard);
+            });
+        }
+    }
 });
+
+
 
 //comportamiento del botón de calendario
 document.addEventListener('DOMContentLoaded', () => {
