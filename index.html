@@ -324,7 +324,7 @@
         </p>
         
         <div class="videos">
-            <div class="video"onclick="mostrarVideo('video1')">
+            <div class="video" onclick="mostrarVideo('video1')">
                 <h2>Descubriendo la Navidad: Orígenes y tradiciones</h2>
                 <img src="images/youtube1.png" alt="Video 1">
             </div>
@@ -400,16 +400,16 @@
             <img src="images/arbol-santa.png" alt="Bola de Navidad" class="decoracion arbol-santa">
         </div>
         <form id="contact-form"  class="contact-form">
-            <label for="nombre">Nombre</label>
+            <label for="env-nombre">Nombre</label>
             <input type="text" id="env-nombre" placeholder="Nombre">
             
-            <label for="ciudad">Ciudad</label>
+            <label for="env-ciudad">Ciudad</label>
             <input type="text" id="env-ciudad" placeholder="Ciudad">
             
-            <label for="pais">País</label>
+            <label for="env-pais">País</label>
             <input type="text" id="env-pais" placeholder="País">
             
-            <label for="carta">Texto</label>
+            <label for="env-carta">Texto</label>
             <textarea id="env-carta" placeholder="Escribe tu carta..."></textarea>
             
             <button type="submit" id="env-card">ENVIAR</button> 
@@ -652,7 +652,7 @@
     <!-- Modal para la imagen a pantalla completa -->
     <div id="modalImagen" class="modal-img">
         <span class="cerrar" onclick="cerrarImagen()">&times;</span>
-        <img class="modal-contenido" id="imagenAmpliada">
+        <img class="modal-contenido" id="imagenAmpliada" src="images/galeria-icono.png" alt="icono galeria">
         <div id="caption"></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
