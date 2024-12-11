@@ -26,6 +26,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
 }
 
 .logo-img {
@@ -66,6 +68,8 @@ body {
 .navbar-links .icon {
     width: 40px;
     margin-right: 10px;
+    
+    
 }
 .navbar-links a.active {
     color: #000000;
@@ -73,7 +77,12 @@ body {
 
 
 .auth-buttons {
+    display: flex;
+    gap: 5px;
     padding-right: 20px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .auth-btn {
@@ -2247,15 +2256,13 @@ tree-area {
 }
 
 
-@media (max-width: 900px) {
-    
+/* Responsive para pantallas de 768px o menos */
+@media (max-width: 768px) {
     body {
-    padding-top: 500px; /* Ajusta el espacio para que el contenido no se superponga al navbar */
+        padding-top: 250px;
     }
-
-/* Ajuste para desplazamiento correcto */
     html {
-    scroll-padding-top: 500px; /* Ajusta el desplazamiento al hacer clic en los enlaces para que no se tape */
+        scroll-padding-top: 200px;
     }
     .navbar {
         flex-direction: column;
@@ -2263,106 +2270,105 @@ tree-area {
     }
 
     .navbar-links {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 columnas */
         text-align: center;
         margin-top: 10px;
     }
-
-    .navbar-links li {
-        margin: 10px 0;
+    .navbar-links a {
+        font-size: 1rem; 
     }
-
-    .logo-img {
-        width: 70px; /* Tamaño más pequeño para el logo */
+    .navbar-links li {
+        margin: 5px; 
     }
 
     .auth-buttons {
-        flex-direction: column;
-        gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
         padding-top: 15px;
     }
 
-    .home {
-        padding: 20px;
+    .auth-btn {
+        width: calc(50% - 10px);
         text-align: center;
+        font-size: 0.9rem; 
     }
 
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    p {
-        font-size: 1.2rem;
-    }
-
-    button {
-        padding: 12px 25px;
-        font-size: 1.2rem;
-    }
-
-    .mapa-container {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .image-container {
-        width: 100%;
+    .home {
+        padding-top: 150px;
+        padding-bottom: 250px;
+        padding-right:20px;
+        background-position: center;
+        text-align: center;
         height: auto;
     }
 
-    .point {
-        width: 20px;
-        height: 20px;
+    .home h1 {
+        font-size: 2rem; 
+        margin-bottom: 10px;
     }
 
-    .tooltip {
-        font-size: 0.9rem;
+    .home p {
+        font-size: 1rem;
+        margin-bottom: 15px; 
     }
+
+    .home button {
+        padding: 10px 20px; 
+        font-size: 1rem; 
+    }
+
 }
 
-
-
+/* Responsive para pantallas de 600px o menos */
 @media (max-width: 600px) {
     body {
-        padding-top: 300px;
-        }/* Sin este código el navegador me tapa el contenido*/
+        padding-top: 290px;
+    }
 
     html {
-    scroll-padding-top: 400px; 
-    }/* Sin este código el navegador me tapa el contenido*/
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
+        scroll-padding-top: 270px;
     }
 
     .navbar-links {
-        flex-direction: column;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px; 
         text-align: center;
     }
-
-    .navbar-links li {
-        margin: 5px 0;
+    .navbar-links a {
+        font-size: 0.9rem; 
     }
 
-    .logo-img {
-        width: 60px; 
-    }
 
     .auth-buttons {
-        flex-direction: column;
-        gap: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        
+    }
+
+    .auth-btn {
+        width: calc(50% - 10px); 
+        text-align: center;
+        font-size: 0.9rem; 
     }
 
     .home {
-        padding: 10px;
+        margin-top: 10px;
+        padding-bottom: 150px;
+        padding-right:20px;
         background-position: center;
         text-align: center;
-        height: auto; 
-        padding-top: 80px; 
+        height: auto;
+
     }
 
-    h1 {
+    .home h1 {
         font-size: 2rem;
+        margin-top: 75px;
     }
 
     p {
