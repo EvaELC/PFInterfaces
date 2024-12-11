@@ -503,6 +503,7 @@ label {
     top: 25%;
     right: 2%;
     width: 130px;
+
 }
 
 .trineo {
@@ -2256,7 +2257,7 @@ tree-area {
 }
 
 
-/* Responsive para pantallas de 768px o menos */
+/* -------------------------------------------Sección Home------------------------------------------- */
 @media (max-width: 768px) {
     body {
         padding-top: 250px;
@@ -2322,16 +2323,13 @@ tree-area {
 
 }
 
-/* Responsive para pantallas de 600px o menos */
 @media (max-width: 600px) {
     body {
         padding-top: 290px;
     }
-
     html {
         scroll-padding-top: 270px;
     }
-
     .navbar-links {
         grid-template-columns: repeat(3, 1fr); 
         gap: 20px; 
@@ -2340,8 +2338,6 @@ tree-area {
     .navbar-links a {
         font-size: 0.9rem; 
     }
-
-
     .auth-buttons {
         display: flex;
         flex-wrap: wrap;
@@ -2349,13 +2345,11 @@ tree-area {
         gap: 10px;
         
     }
-
     .auth-btn {
         width: calc(50% - 10px); 
         text-align: center;
         font-size: 0.9rem; 
     }
-
     .home {
         margin-top: 10px;
         padding-bottom: 150px;
@@ -2365,18 +2359,293 @@ tree-area {
         height: auto;
 
     }
-
     .home h1 {
         font-size: 2rem;
         margin-top: 75px;
     }
-
     p {
         font-size: 1rem;
     }
-
     button {
         padding: 10px 20px;
         font-size: 1rem;
     }
 }
+/* -------------------------------------------Mapa------------------------------------------- */
+/* Breakpoint para Tablet (768px) */
+@media (max-width: 768px) {
+    .mapa-container {
+        width: 80%; /* Más pequeño para tabletas */
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .mapa-texto h1 {
+        font-size: 28px;
+        margin-top: 50px;
+    }
+
+    .mapa-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .tooltip {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .guirnalda{
+        top: 25%;
+        left: 90%;
+    }
+    .snowman{
+        top:80%;
+        left: 90%;
+    }
+    .trineo{
+        top: 25%;
+    }
+    .papa-noel-renos{
+        top:80%;
+        right: 100%;
+    }
+    .guirnalda,
+    .trineo,
+    .papa-noel-renos,
+    .snowman {
+        width: 60px; /* Reducir tamaño en pantallas pequeñas */
+    }
+}
+
+/* Breakpoint para Móvil (600px) */
+@media (max-width: 600px) {
+    .mapa-container {
+        padding-left: 70px;
+        padding-right: 50px;
+        width: 65%;
+    }
+
+    .mapa-texto h1 {
+        font-size: 22px;
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .mapa-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .point {
+        width: 10px;
+        height: 10px;
+    }
+
+    .tooltip {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+
+    .decoracion {
+        width: 80px;
+    }
+
+    .guirnalda{
+        top: 35%;
+        right: 5%;
+        left: 92%;
+    }
+    .snowman{
+        top:80%;
+        right: 5%;
+        left: 92%;
+    }
+    .trineo{
+        top: 35%;
+    }
+    .papa-noel-renos{
+        top:80%;
+        right: 100%;
+    }
+    .guirnalda,
+    .trineo,
+    .papa-noel-renos,
+    .snowman {
+        width: 50px; /* Reducir tamaño en pantallas pequeñas */
+    }
+}
+
+/* -------------------------------------------Historia de papá Noel------------------------------------------- */
+
+/* Breakpoint para tablet (768px) */
+@media (max-width: 768px) {
+    .historia-container {
+        padding: 30px;
+    }
+
+    .left-decoracion,
+    .right-decoracion {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        flex-direction: row;
+        gap: 170px; 
+        justify-content: center; 
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .bola-navidad {
+        width: 100px;
+        height: 100px;
+    }
+
+    .historia-texto h1 {
+        font-size: 30px; /* Ajustar tamaño de la cabecera */
+    }
+
+    .videos {
+        flex-direction: column; /* Hacer que los videos se apilen en columna en tablet */
+    }
+
+    .video {
+        width: 100%;
+    }
+}
+
+/* Breakpoint para móvil (600px) */
+@media (max-width: 600px) {
+    .historia-container {
+        padding: 20px;
+    }
+
+    .left-decoracion,
+    .right-decoracion {
+        flex-direction: row; 
+        gap: 120px; 
+        justify-content: center;
+    }
+
+    .bola-navidad {
+        width: 70px; 
+        height: 70px;
+        padding: 0 10;
+    }
+
+    .historia-texto h1 {
+        font-size: 24px; 
+    }
+    .videos {
+        flex-direction: column; /* Asegurarse de que los videos estén en columna */
+        gap: 15px;
+    }
+
+    .video {
+        width: 100%;
+    }
+}
+
+/* -------------------------------------------Carta------------------------------------------- */
+@media (max-width: 768px) {
+    .carta-container {
+        width:70%;
+        padding: 10px;
+        margin: 10px, 50px;
+    }
+
+    .titulo-carta {
+        flex-direction:row;
+        gap: 30px;
+    }
+
+    .titulo-carta h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .titulo-img-carta {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-form {
+        grid-template-columns: 0.5fr;
+        gap: 5px;
+    }
+
+    .contact-form button {
+        font-size: 1.4rem;
+        margin-top: 10px;
+    }
+
+    .left-decor-carta {
+        left: -80px;
+        top: 80%;
+    }
+
+    .right-decor-carta {
+        right: -50px;
+    }
+
+    .arbol-santa,
+    .snowflake {
+        width: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carta-container {
+        width: 80%;
+        margin: 10px, 50px;
+        padding: 10px;
+    }
+
+    .titulo-carta h1 {
+        font-size: 24px;
+    }
+
+    .titulo-img-carta {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact-form {
+        grid-template-columns: 0.5fr;
+        gap: 10px;
+    }
+
+    .contact-form label {
+        font-size: 1.5rem;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form textarea {
+        font-size: 1rem;
+    }
+
+    .contact-form button {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+    }
+
+    .left-decor-carta {
+        left: -50px;
+        top: 85%;
+    }
+
+    .right-decor-carta {
+        right: -30px;
+    }
+
+    .arbol-santa,
+    .snowflake {
+        width: 50px;
+    }
+}
+
+
+
+
+
