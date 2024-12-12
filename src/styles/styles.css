@@ -110,7 +110,7 @@ body {
 .home {
     text-align: right; 
     background-color: #FF4500;
-    background-image: url("images/background.jpeg");
+    background-image: url('images/background.jpeg');
     background-size: cover;
     color: white;
     padding: 50px;

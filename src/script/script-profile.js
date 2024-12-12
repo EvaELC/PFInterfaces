@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
         playButton.textContent = '▶';
     });
 
-    const audio = new Audio('happy-xmas.mp3'); 
+    const audio = new Audio('images/happy-xmas.mp3'); 
     const playButton = document.getElementById('play-button');
     const progressBar = document.getElementById('progress-bar');
     const timeDisplay = document.getElementById('time-display');
