@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     box-sizing: border-box;
 }
 
@@ -1874,6 +1874,14 @@ td, th {
     font-size: 2.5rem;
 }
 
+.juego-container oculto{
+    display: flex;
+    flex-direction: row; /* Alinea elementos horizontalmente */
+    justify-content: space-between; /* Espaciado uniforme entre hijos */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 20px;
+    gap: 20px; /* Espaciado entre los hijos */
+}
 /* Boton de volver */
 .juego-container button, .video-container button{
     margin-left: 20px; 
@@ -2647,5 +2655,211 @@ tree-area {
 
 
 
+@media (max-width: 768px) {
+    .minijuegos-container {
+        padding: 60px 15px;
+        margin-top: 80px;
+    }
+
+    .minijuegos-container h1 {
+        font-size: 3rem;
+    }
+
+    .minijuegos-container p {
+        font-size: 1.2rem;
+    }
+
+    .minijuegos-slider {
+        padding: 10px;
+    }
+
+    .juegos-lista {
+        flex-direction: column;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;  /* Asegura que los juegos estén centrados también en vertical */
+    }
+
+    .juego {
+        width: 490px;
+        padding-top: 30px;
+    }
+
+    .juego img {
+        width: 310px;
+        height: auto;
+    }
+
+    .mistletoe1, .mistletoe2 {
+        width: 130px;
+    }
+
+    .santaball, .santagift {
+        width: 130px;
+        top:1670px;
+    }
+}
+
+/* Respuesta para pantallas con un ancho máximo de 600px (Móvil) */
+@media (max-width: 600px) {
+    .minijuegos-container {
+        padding: 40px 10px;
+        margin-top: 60px;
+     
+    }
+
+    .minijuegos-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .minijuegos-container p {
+        font-size: 1rem;
+    }
+
+    .minijuegos-slider {
+        padding: 5px;
+    }
+
+
+    .juegos-lista {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center; 
+    }
+
+
+    .juego {
+        width: 350px;
+        padding: 10px 0px;
+    }
+
+    .juego img {
+        width: 300px;
+        height: auto;
+    }
+
+    .mistletoe1, .mistletoe2 {
+        width: 100px;
+    }
+
+    .santaball, .santagift {
+        width: 100px;
+        top:1520px;
+    }
+}
+
+
+/*-----------------------------------------------Responsive juegos------------------------------------------------------------------------*/
+/* Media Query para tablet (768px) */
+@media (max-width: 768px) { 
+    .juego-titulo h2 {
+        font-size: 1.8rem; 
+        text-align: center;
+        margin-top: 15px; /
+    }
+    .juego-titulo {
+        flex-direction: row; 
+        align-items: center;
+        justify-content: center;
+    }
+    .juego-content {
+        flex-direction: row;  
+        align-items: center; 
+        justify-content: space-between; 
+    }
+
+    /* Ajustar la imagen */
+    .juego2-img {
+        width: 80%; 
+        height: auto;
+    }
+
+    .santa-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .decoracion-juego {
+        gap: 15px;
+    }
+
+    .decoracion-gift {
+        width: 70px; 
+    }
+
+    #tree {
+        width: 250px; 
+        height: 400px;
+    }
+
+    #decorations-container {
+        grid-template-columns: repeat(2, 40px); 
+    }
+
+    .decoration {
+        width: 40px; 
+        height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajuste en el título */
+    .juego-titulo h2 {
+        font-size: 1rem; 
+        text-align: center;
+        margin-top: 20px;
+        
+    }
+
+    .juego-titulo {
+        flex-direction: row; 
+        align-items: center;
+        justify-content: center;
+    }
+    .decorations h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px; 
+    }
+
+    .juego-content {
+        flex-direction: row; 
+        align-items: center;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .juego2-img {
+        width: 100%; 
+        height: auto;
+    }
+
+    .santa-icon {
+        width: 70px; 
+        height: 70px;
+    }
+
+    .decoracion-juego {
+        gap: 5px; 
+        top: 0;
+    }
+
+    .decoracion-gift {
+        width: 60px;
+    }
+    #tree {
+        width: 250px;
+        height: 400px;
+    }
+    
+    #decorations-container {
+        grid-template-columns: repeat(1, 30px); 
+    }
+    
+    .decoration {
+        width: 30px; 
+        height: 30px;
+    }
+}
 
 
