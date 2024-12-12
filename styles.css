@@ -2332,7 +2332,7 @@ tree-area {
     }
 
     .postal-continue {
-        margin-top: 70%;
+        margin-top: 88%;
     }
 
 
@@ -2397,7 +2397,7 @@ tree-area {
     
     .juego {
     margin-bottom: 20px;
-    width: 200px; 
+    width: 130px; 
     }
 
     .candy-cane, .candy-cane2 {
@@ -2821,23 +2821,13 @@ tree-area {
         align-items: center;  /* Asegura que los juegos estén centrados también en vertical */
     }
 
-    .juego {
-        width: 490px;
-        padding-top: 30px;
-    }
-
-    .juego img {
-        width: 310px;
-        height: auto;
-    }
-
     .mistletoe1, .mistletoe2 {
         width: 130px;
     }
 
     .santaball, .santagift {
         width: 130px;
-        top:1670px;
+        top:1300px;
     }
 }
 
@@ -2861,32 +2851,14 @@ tree-area {
         padding: 5px;
     }
 
-
-    .juegos-lista {
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
-        align-items: center; 
-    }
-
-
-    .juego {
-        width: 350px;
-        padding: 10px 0px;
-    }
-
-    .juego img {
-        width: 300px;
-        height: auto;
-    }
-
     .mistletoe1, .mistletoe2 {
         width: 100px;
+        display: none;
     }
 
     .santaball, .santagift {
         width: 100px;
-        top:1520px;
+        top:950px;
     }
 }
 
