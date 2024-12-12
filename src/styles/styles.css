@@ -110,7 +110,7 @@ body {
 .home {
     text-align: right; 
     background-color: #FF4500;
-    background-image: url('images/background.jpeg');
+    background-image: url('../images/background.jpeg');
     background-size: cover;
     color: white;
     padding: 50px;
@@ -1918,7 +1918,7 @@ tree-area {
 }
 
 #tree {
-    background: url('images/christmas-tree.jpeg') no-repeat center;
+    background: url('../images/christmas-tree.jpeg') no-repeat center;
     background-size: cover;
     width: 400px;
     height: 600px;
@@ -1949,39 +1949,39 @@ tree-area {
 }
 
 .red-ornament {
-    background: url('images/red-ornament.png') no-repeat center;
+    background: url('../images/red-ornament.png') no-repeat center;
     background-size: cover;
 }
 .green-ornament {
-    background: url('images/green-ornament.png') no-repeat center;
+    background: url('../images/green-ornament.png') no-repeat center;
     background-size: cover;
 }
 .gingerbread {
-    background: url('images/gingerbread.png') no-repeat center;
+    background: url('../images/gingerbread.png') no-repeat center;
     background-size: cover;
 }
 .reindeer {
-    background: url('images/reindeer.png') no-repeat center;
+    background: url('../images/reindeer.png') no-repeat center;
     background-size: cover;
 }
 .star {
-    background: url('images/star.png') no-repeat center;
+    background: url('../images/star.png') no-repeat center;
     background-size: cover;
 }
 .bell {
-    background: url('images/bell.png') no-repeat center;
+    background: url('../images/bell.png') no-repeat center;
     background-size: cover;
 }
 .ornament-extra {
-    background: url('images/ornament-extra.png') no-repeat center;
+    background: url('../images/ornament-extra.png') no-repeat center;
     background-size: cover;
 }
 .gift {
-    background: url('images/gift_game2.png') no-repeat center;
+    background: url('../images/gift_game2.png') no-repeat center;
     background-size: cover;
 }
 .candy-cane2 {
-    background: url('images/candycane.png') no-repeat center;
+    background: url('../images/candycane.png') no-repeat center;
     width: 40px; 
     height: 80px; 
     background-size: contain; 
