@@ -1421,6 +1421,7 @@ td, th {
     margin-bottom: 160px;
     width: 100%;
     max-width: 800px;
+    flex-direction: row;
 }
 
 .casa {
@@ -2118,7 +2119,6 @@ tree-area {
         padding: 5px; 
     }
 
-    /* Botones */
     .back-button {
         width: 120px;
         height: 35px;
@@ -2130,34 +2130,30 @@ tree-area {
         font-size: 1rem;
     }
 
-    /* Títulos */
     .postal-title, .reserva-title {
-        font-size: 2rem; /* Reducir tamaño de títulos */
+        font-size: 2rem; 
     }
 
     .postal-subtitle, .res-casa-title {
         font-size: 1rem;
     }
 
-    /* Contenedores */
     .postal-container, .reserva-casa, .minijuegos-container {
         width: 95%; /* Ajustar contenedores al ancho de pantalla */
         padding: 15px;
     }
 
     .postal-grid, .res-form {
-        display: flex; /* Cambiar de grid a flexbox */
-        flex-direction: column; /* Una sola columna */
-        gap: 20px; /* Espacio entre elementos */
+        display: flex; 
+        flex-direction: column; 
+        gap: 20px; 
     }
 
-    /* Imágenes */
     .postal-img, .juego img, .casa {
-        width: 100%; /* Ajustar imágenes al contenedor */
+        width: 100%; 
         height: auto;
     }
 
-    /* Formularios */
     .res-form input, .form-group input {
         width: 100%; /* Inputs ocupan todo el ancho */
         font-size: 1rem;
@@ -2175,6 +2171,57 @@ tree-area {
     .res-info {
         padding: 10px;
     }
+
+    .postal-continue {
+        margin-top: 55%;
+    }
+
+    #dibujo-preview {
+        width: 100%; 
+        height: auto;
+    }
+
+    .postales-fin {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #calendario {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendario-text {
+    text-align: center; 
+    }
+
+    .calendario-wrapper {
+    width: 100%; 
+    }
+
+    .calendario-dias table {
+        width: 100%;
+        height: 300px
+    }
+
+    .calendario-dias {
+        margin-top: 97px;
+        
+    }
+
+    .reservas {
+    flex-direction: column; 
+    }
+    .res-botones {
+    flex-direction: row; 
+    }
+
+    .back-button {
+        top: 30%
+    }
+
 }
 
 /* Breakpoint para móvil (600px) */
@@ -2253,6 +2300,10 @@ tree-area {
     .postal-img, .juego img, .casa {
         width: 100%; /* Imágenes se ajustan */
         height: auto;
+    }
+
+    .postal-continue {
+        height: 600px;
     }
 }
 
