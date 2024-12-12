@@ -2222,6 +2222,23 @@ tree-area {
         top: 30%
     }
 
+    .juegos-lista {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+    }
+    
+    .juego {
+    margin-bottom: 20px;
+    width: 200px; 
+    }
+
+    .mistletoe1, .mistletoe2 {
+        width: 150px;
+    }
+
 }
 
 /* Breakpoint para móvil (600px) */
@@ -2303,7 +2320,66 @@ tree-area {
     }
 
     .postal-continue {
-        height: 600px;
+        margin-top: 55%;
+    }
+
+    #dibujo-preview {
+        width: 100%; 
+        height: auto;
+    }
+
+    .postales-fin {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #calendario {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendario-text {
+    text-align: center; 
+    }
+
+    .calendario-wrapper {
+    width: 100%; 
+    }
+
+    .calendario-dias table {
+        width: 100%;
+        height: 300px
+    }
+
+    .calendario-dias {
+        margin-top: 97px;
+        
+    }
+
+    .reservas {
+    flex-direction: column; 
+    }
+    .res-botones {
+    flex-direction: row; 
+    }
+
+    .back-button {
+        top: 30%
+    }
+
+    .juegos-lista {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+    }
+    
+    .juego {
+    margin-bottom: 20px;
+    width: 200px; 
     }
 }
 
