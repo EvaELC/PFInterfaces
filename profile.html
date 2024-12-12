@@ -188,12 +188,12 @@
     <div id="postal-navidad" class="postal-container" style="display: none;">
         <button id="back-button6" class="back-button">⬅ Volver</button>
         <div class="postal-header">
-            <img src="images/bola.png" alt="Bola de Navidad" class="decoracion-item">
+            <img src="images/bola.png" alt="Bola de Navidad" class="decoracion-item" id="item1">
             <div class="postal-title-container">
                 <h1 class="postal-title">POSTALES</h1>
                 <p class="postal-subtitle">¡Personaliza tu postal!</p>
             </div>
-            <img src="images/bola.png" alt="Bola de Navidad" class="decoracion-item">
+            <img src="images/bola.png" alt="Bola de Navidad" class="decoracion-item" id="item2">
         </div>
         <div class="postal-start">
             <img src="images/postal.png" alt="Postal" class="postal">
@@ -201,7 +201,6 @@
         </div>
     </div>
 
-    
     <div id="postal-seleccion" class="postal-select" style="display: none;">
         <div class="decorative-container">
             <div class="decorative-column">
@@ -340,13 +339,16 @@
             <button id="back-button4" class="back-button">⬅ Volver</button>
             <h1 class="reserva-title">Elige las casas a reservar</h1>
             <div class="reservas">
-                <img src="images/casa1.jpg" alt="Casa 1" class="casa" id="casa-1">                
-                <img src="images/casa2.jpg" alt="Casa 2" class="casa" id="casa-2"> 
+                <div class="casa-item">
+                    <img src="images/casa1.jpg" alt="Casa 1" class="casa">
+                    <button id="res-button1" class="res-btn">Seleccionar</button>
+                  </div>
+                  <div class="casa-item">
+                    <img src="images/casa2.jpg" alt="Casa 2" class="casa">
+                    <button id="res-button2" class="res-btn">Seleccionar</button>
+                  </div>
             </div>
-            <div class="res-botones">
-                <button id="res-button1" class="res-btn">Seleccionar</button>
-                <button id="res-button2" class="res-btn">Seleccionar</button>
-            </div> 
+            
         </div> 
     </div>
 
