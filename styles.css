@@ -1,0 +1,2978 @@
+/* Estilos generales */
+* {
+    font-family: "Irish Grover", system-ui, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    scrollbar-width: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFAF0; 
+    background-color: #b91919;
+    
+}
+
+/* Barra de navegaión */
+.navbar {
+    background-color: #386624; 
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.logo-img {
+    color: white;
+    width: 80px;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+/* Estilos de los enlaces dentro de la barra */
+.navbar-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin: 0 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #000000;
+}
+
+.navbar-links .icon {
+    width: 40px;
+    margin-right: 10px;
+    
+    
+}
+.navbar-links a.active {
+    color: #000000;
+}
+
+
+.auth-buttons {
+    display: flex;
+    gap: 5px;
+    padding-right: 20px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.auth-btn {
+    color: white;
+    background-color: #006400;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    height: auto;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+}
+
+.auth-btn:hover {
+    background-color: #004d00; 
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); 
+}
+
+/* Estilos de la sección principal */
+.home {
+    text-align: right; 
+    background-color: #FF4500;
+    background-image: url('/src/images/background.jpeg');
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    height: 90vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-end; 
+    padding-left: 10%;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+
+/* Popups y modales */
+.popup, .profile-popup {
+    display: none;
+    position: fixed;
+    z-index: 1001; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content, .profile-popup-content {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.modal-content p {
+    color: #000;
+}
+
+.popup-content, .profile-popup-content, .modal-content {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; 
+    max-width: 400px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; 
+}
+
+input {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    margin-bottom: 10px;
+}
+
+small {
+    display: block; 
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: -5px; 
+}
+
+.popup h2, .profile-popup h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+.button-container, #modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup button, .profile-popup button, .modal button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 45%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.popup button, .profile-popup button {
+    background-color: #195c25; 
+    color: white;
+}
+
+.popup button:hover, .profile-popup button:hover {
+    background-color: #113d19; 
+    transform: scale(1.05);
+}
+
+#login-cancel, #cancel-profile {
+    background-color: #f44336; 
+}
+
+#login-cancel:hover, #cancel-profile:hover {
+    background-color: #d32f2f;
+}
+
+#save-profile {
+    background-color: #0e5211; 
+}
+
+#save-profile:hover {
+    background-color: #0a3b0c;
+}
+
+#modal-cancel {
+    background-color: #f44336;
+}
+
+#modal-cancel:hover {
+    background-color: #d32f2f; 
+}
+
+#modal-confirm {
+    background-color: #0e5211; 
+}
+
+#modal-confirm:hover {
+    background-color: #0a3b0c;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f44336; 
+}
+
+.profile-popup small {
+    font-size: 0.8rem;
+    color: #666;
+    padding-bottom: 10px;
+}
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-link {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    text-decoration: none;   
+    color: inherit;          
+    font-weight: bold;       
+}
+
+.profile-img-container {
+    width: 50px;             
+    height: 50px;
+    border-radius: 50%;      
+    overflow: hidden;        
+}
+
+.profile-img {
+    width: 100%;             
+    height: 100%;
+    object-fit: cover;       
+}
+
+.profile-text {
+    margin-top: 5px;         
+    font-size: 16px;         
+}
+
+/* ESTILOS PROFILE.HTML*/
+.container-prof {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    width: 80%;
+    margin: 150px auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+
+.container-prof h1 {
+    color: #000;
+}
+
+.button-container-prof {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; 
+    justify-items: center; 
+}
+
+.button-container-prof button {
+    width: 100%; 
+    max-width: 200px; 
+    padding: 10px; 
+    text-align: center;
+    font-size: 25px;
+    border: none;
+    color: white;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.santa-container {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.santa-renos-img {
+    width: 6000; 
+    height: 2000;
+    object-fit: contain; 
+}
+
+.profile-box img {
+    margin: 20px 0;
+    max-width: 120px;
+    height: auto;
+}
+
+/* Mapa */
+.mapa-container {
+    position: relative;
+    text-align: center;
+    margin-top: 120px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 10vh auto; 
+}
+
+.mapa-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapa-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.mapa-texto {
+    margin-top: 20px; 
+    color: #ffffff;
+    text-align: center; 
+    font-size: 1.8em; 
+    line-height: 1.2; 
+}
+
+.mapa-texto h1 {
+    margin-top: 100px; 
+    font-size: 36px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+}
+
+.point {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    z-index: 900;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    display: none;
+    z-index: 1000;
+}
+
+.point:hover .tooltip {
+    display: block;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #d32f2f; 
+    display: block; 
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Formato para decoraciones */
+.decoracion {
+    position: absolute;
+}
+
+.guirnalda {
+    top: 25%;
+    right: 2%;
+    width: 130px;
+
+}
+
+.trineo {
+    top: 24%;
+    left: 2%;
+    width: 130px;
+}
+
+.papa-noel-renos {
+    bottom: 15%;
+    left: 2%;
+    width: 130px;
+}
+
+.snowman {
+    bottom: 15%;
+    right: 2%;
+    width: 130px;
+}
+
+/* Historia */
+.historia-container {
+    padding: 50px;
+    color: white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    max-width: 900px;  
+    margin: 10vh auto;    
+}
+
+.historia-container p {
+    max-width: 800px;  
+    margin: 20px auto; 
+    font-size: 1.2em;
+    text-align: center; 
+    line-height: 1.6;
+}
+
+.videos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.video h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+
+.decoracion-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.left-decoracion,
+.right-decoracion {
+    position: absolute;
+    top: 15%;
+    display: flex;
+    flex-direction: column; 
+    gap: 120px; 
+    height: auto; 
+}
+.left-decoracion {
+    left: -70px;
+}
+.right-decoracion {
+    right: -70px; 
+}
+.decoracion-row {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+}
+.bola-navidad {
+    width: 140px; 
+    height: 140px;
+}
+
+.historia-texto h1 {
+    margin-top: 75px;
+    font-size: 36px;
+}
+
+/* Historia: pagina especifica para videos */
+.video-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 0px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0; 
+}
+
+/* Video específico */
+
+.video-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: "Irish Grover", cursive;
+    color: white;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+.video-content video {
+    width: 90%; 
+    max-width: 900px;
+
+}
+.candy-cane {
+    width: 100px; 
+    height: auto;
+}
+
+.decoracion-candy {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    z-index: 1;
+}
+
+.decoracion-candy.left {
+    left: -20px; 
+}
+
+.decoracion-candy.right {
+    right: -20px; 
+}
+
+
+/* Carta */
+.carta-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative; 
+}
+
+.titulo-carta {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
+    gap: 20px;   
+    margin-top: 75px;     
+    margin-bottom: 25px;       
+}
+
+.titulo-carta h1 {
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 40px;
+    text-align: center;  
+}
+
+.titulo-img-carta {
+    width: 50px;  
+    height: 50px;
+    object-fit: cover;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.contact-form label {
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: left;
+    font-weight: normal;
+}
+
+.contact-form input[type="text"] {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #000;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+.contact-form textarea {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #000;
+    width: 96%;
+    height: 150px;
+    resize: none;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    grid-column: span 2;
+    justify-self: center;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888;
+}
+
+
+.left-decor-carta {
+    position: absolute;    
+    top: 70%;               
+    transform: translateY(-50%); 
+    z-index: -1;   
+    left: -180px;           
+}
+
+.right-decor-carta {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+}
+
+.decoracion-row-carta{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+}
+
+.arbol-santa,
+.snowflake {
+    width: 90px;          
+    height: auto;
+}
+
+/* CALENDARIO */
+.calendario-container {
+    display: none; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #b91919;
+    border-radius: 15px;
+    width: 90%;
+    margin: 150px auto;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Irish Grover', cursive;
+}
+
+.calendario-text {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    text-align: center; 
+}
+
+.calendario-container h1 {
+    max-width: 30%; 
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    margin-left: 250px;
+    
+}
+
+.calendario-container p {
+    max-width: 50%; 
+    font-size: 2rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+    margin-left: 200px;
+}
+
+.calendario-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 90%;
+}
+
+.calendario-img {
+    display: block;
+    width: 100%; 
+    height: auto;
+    z-index: 1;
+}
+
+.calendario-dias {
+    position: absolute; 
+    top: 36%; 
+    left: 6%; 
+    width: 88%; 
+    height: 63%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto; 
+    z-index: 2;
+}
+
+.calendario-dias table {
+    margin: 0; 
+    width: 100%;
+    height: 100%;
+    border-collapse: separate; 
+}
+
+.calendario-dias th {
+    font-size: 1.2rem; 
+    color: #000; 
+}
+
+.calendario-dias td {
+    padding: 12px;
+    pointer-events: auto;
+    color: transparent; 
+    height: auto; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    border: 1px solid #ddd;
+}
+
+
+table {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #000; 
+    font-weight: bold;
+}
+
+td, th {
+    height: 50px; 
+    vertical-align: middle;
+}
+
+.current-day {
+    background-color: rgba(40, 167, 69, 0.5);
+    color: #fff; 
+    cursor: pointer;
+}
+
+.cancion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 150px auto;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.cancion-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.cancion-title {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    width: 60%;
+}
+
+.cancion-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.date-box {
+    background-color: #ff5555;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.cancion-player {
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.cancion-decoraciones {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.decoracion-item {
+    width: 100px;
+    height: auto;
+ 
+}
+
+.audio-widget {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#play-button {
+    background-color: #ff5555;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem; 
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0; 
+}
+
+
+#progress-bar {
+    width: 70%;
+    cursor: pointer;
+}
+
+#time-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff5555;
+}
+
+/* POSTALES */
+.back-button {
+    background-color: #1c6915;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 80px;
+    top: 170px;
+} 
+
+.postal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 150px auto;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.postal-header .decoracion-item {
+    width: 100px;
+    height: auto;
+}
+
+.postal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 160px;
+    margin-bottom: 60px;
+}
+
+.postal-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postal-title {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px; 
+}
+
+.postal-subtitle {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 0; 
+}
+
+.postal-start {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    margin-bottom: 80px; 
+}
+
+.postal {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#init-button {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#init-button:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+.decorative-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: -30px; 
+    gap: 40px; 
+}
+
+.decorative-container {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    width: auto; 
+    height: 100%; 
+    margin: 0; 
+}
+
+
+.postal-select{
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.postal-global{
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.postal-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 150px;
+    width: 50%;
+    text-align: center;
+}
+
+.postal-step-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.postal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 50px; 
+}
+
+.postal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postal-img {
+    width: 285px; 
+    height: 170px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+
+}
+
+.postal-btn {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px
+}
+
+.postal-btn:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+.postal-continue {
+    display: flex;
+    justify-content: flex-start; 
+    width: 3%; 
+    margin-top: 35%;
+}
+
+.postal-continue2 {
+    display: flex;
+    justify-content: flex-start; 
+    width: 3%; 
+    margin-top: 23%;
+}
+
+#continue-button, #continue-button1, #continue-button2{
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    right: -100px;
+    
+}
+
+#continue-button2:hover,
+#continue-button1:hover,
+#continue-button:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+.postal-pnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 150px;
+    width: 50%;
+    text-align: center;
+}
+
+.postal-submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.postal-pnt-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.selected {
+    background-color: #3f8d3f; 
+}
+
+
+.dibujo {
+    width: 600px;
+    height:400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.img-btn {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.img-btn:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+.postal-fin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 150px;
+    width: 50%;
+    text-align: center;
+}
+
+.postal-fin-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.postales-fin {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 160px;
+    width: 100%;
+    max-width: 800px;
+    padding-top: 70px
+}
+
+.postales-fin img {
+    width: 330px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.postal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 150px;
+    width: 50%;
+    text-align: center;
+    padding: 40px;
+}
+
+.postal-info-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.postal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 150px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-group label {
+    width: 200px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.postal-env {
+    align-self: center;
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.postal-env:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+
+
+/* RESERVA*/
+
+.reserva-global{
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.reserva-casa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #b91919;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 150px auto;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.reserva-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.reservas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 160px;
+    width: 100%;
+    max-width: 800px;
+    flex-direction: row;
+}
+
+.casa {
+    width: 600px;
+    height:400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.res-botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-top: -120px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.res-btn {
+    background-color: #006400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px
+}
+
+.res-btn:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+#res-casa1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 220px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reserva-casa1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.res-casa1-title {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #444;
+    text-shadow: none;
+}
+
+#res-casa2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 220px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reserva-casa2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.res-casa2-title {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #444;
+    text-shadow: none;
+}
+
+.res-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.res-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.res-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.res-form button {
+    padding: 10px 15px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #006400;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.res-form input::placeholder {
+    color: #888;
+}
+
+.res-info {
+    background-color: #f9f9f9;
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.res-info h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.res-info p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+    text-shadow: none;
+}
+
+.res-casa-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+
+/* Resumen de reservas */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-res-content {
+    background-color: #fff;
+    width: 80%;
+    max-height: calc(100vh - 120px); 
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    position: relative; 
+}
+
+.modal-header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px 8px 0 0; 
+    text-align: center;
+    position: relative; 
+}
+
+.modal-header h2 {
+    margin: 0; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#reservations-list {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 0 0 8px 8px; 
+    overflow-y: auto; 
+    flex-grow: 1; 
+}
+
+.reservation-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.reservation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reservation-details p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.modal-close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    top: 20px;  
+    right: 20px; 
+    z-index: 10; 
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/* MINIJUEGOS - Boton*/
+.minijuegos-container {
+    text-align: center;
+    margin-top: 100px;
+    padding: 80px 20px;
+    background-color: #b91919; 
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 10vh auto;
+}
+.oculto {
+    display: none;
+}
+.minijuegos-container h1 {
+    font-size: 4rem; 
+    margin-bottom: 5px;
+    margin-top: 50px; 
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.decoraciones-juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+}
+
+.decoracion-gift {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.decoracion-gift:hover {
+    transform: scale(1.1);
+}
+
+.santa-icon {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.minijuegos-container p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.minijuegos-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    gap: 20px; 
+}
+
+.juegos-lista {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+    width: 100%;
+    max-width: 800px;
+    overflow: visible;
+}
+
+
+.juego {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 180px;
+    padding: 10px;
+    color: #000;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.juego:hover {
+    transform: scale(1.1);
+}
+.juego img {
+    width: 150px; 
+    height: 150px;  
+    object-fit: cover; 
+    border-radius: 10px; }
+
+.juego h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.separador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.separador-juego {
+    width: 600px; 
+    height: 60px;
+}
+
+.decoraciones-contenedor {
+    margin-top: 20px; 
+    position: relative;
+}
+
+
+
+.mistletoe2 {
+    top: 1%;
+    right: 2%;
+    width: 220px;
+}
+
+.mistletoe1{
+    top: 1%;
+    left: 2%;
+    width: 220px;
+}
+
+.santaball {
+    bottom: 1%;
+    left: 2%;
+    width: 170px;
+}
+
+.santagift {
+    bottom: 1%;
+    right: 2%;
+    width: 170px;
+}
+
+/* Juego 2:*/
+.juego-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 35px;
+}
+
+.juego-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.juego-titulo h2 {
+    line-height: 1.2;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    word-wrap: break-word; 
+    margin-top: -20px;
+}
+
+.juego-imagen {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.juego2-img {
+    max-width: 100%;
+    height: auto;
+}
+/********** Juego 3:**********/
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 50px); 
+    gap: 5px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.jewel {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#score-board {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 300px;
+    margin-right: 100px;
+}
+
+#score-board p {
+    font-size: 2.5rem;
+}
+
+.juego-container oculto{
+    display: flex;
+    flex-direction: row; /* Alinea elementos horizontalmente */
+    justify-content: space-between; /* Espaciado uniforme entre hijos */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 20px;
+    gap: 20px; /* Espaciado entre los hijos */
+}
+/* Boton de volver */
+.juego-container button, .video-container button{
+    margin-left: 20px; 
+    margin-top: 10px;  
+}
+
+.decoracion-juego {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    padding-right: 10px; 
+    position: relative;
+    top: -10px; 
+}
+
+.decoracion-gift {
+    width: 130px;
+    height: auto;
+    
+}
+
+.santa-icon{
+    width:170px;
+    height: 170px;
+}
+
+
+/* Juego 2 formato: ------------*/
+tree-area {
+    background-color: #663300;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#tree {
+    background: url('/src/images/christmas-tree.jpeg') no-repeat center;
+    background-size: cover;
+    width: 400px;
+    height: 600px;
+    position: relative;
+}
+
+.decorations {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.5rem;
+}
+
+#decorations-container {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 15px;
+}
+
+.decoration {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.red-ornament {
+    background: url('/src/images/red-ornament.png') no-repeat center;
+    background-size: cover;
+}
+.green-ornament {
+    background: url('/src/images/green-ornament.png') no-repeat center;
+    background-size: cover;
+}
+.gingerbread {
+    background: url('/src/images/gingerbread.png') no-repeat center;
+    background-size: cover;
+}
+.reindeer {
+    background: url('/src/images/reindeer.png') no-repeat center;
+    background-size: cover;
+}
+.star {
+    background: url('/src/images/star.png') no-repeat center;
+    background-size: cover;
+}
+.bell {
+    background: url('/src/images/bell.png') no-repeat center;
+    background-size: cover;
+}
+.ornament-extra {
+    background: url('/src/images/ornament-extra.png') no-repeat center;
+    background-size: cover;
+}
+.gift {
+    background: url('/src/images/gift_game2.png') no-repeat center;
+    background-size: cover;
+}
+.candy-cane2 {
+    background: url('/src/images/candycane.png') no-repeat center;
+    width: 40px; 
+    height: 80px; 
+    background-size: contain; 
+}
+
+.decoracion-juego {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.decoracion-gift {
+    width: 50px;
+    height: auto;
+}
+
+/* Galería */
+.galeria-container {
+    padding: 50px;
+    text-align: center;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.imagen {
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0 4px 6px black;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.imagen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px black;
+}
+
+.imagen img {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.imagen h2 {
+    margin: 0;
+    padding-top: 10px;
+    font-size: 1.2rem;
+    color: #070707;
+    text-align: center;
+}
+
+
+/* Modal para imágenes en pantalla completa */
+.modal-img {
+    padding-top: 90px;
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0); 
+}
+
+.modal-contenido {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    color: #aa1818;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+/* RESPONSIVE */
+
+/* Breakpoint para tablet (768px) */
+@media screen and (max-width: 768px){
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .imagen h2 {
+        font-size: 1rem;
+    }
+    .galeria-container {
+        padding: 30px;
+    }
+    .calendario-wrapper {
+        max-width: 90%; 
+    }
+
+    .calendario-dias {
+        top: 12%; 
+        left: 5%; 
+        width: 90%; 
+        height: auto; 
+    }
+
+    .calendario-dias th,
+    .calendario-dias td {
+        font-size: 0.9rem; 
+        padding: 5px; 
+    }
+
+    .back-button {
+        width: 120px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .postal-btn, .res-btn {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+
+    .postal-title, .reserva-title {
+        font-size: 2rem; 
+    }
+
+    .postal-subtitle, .res-casa-title {
+        font-size: 1rem;
+    }
+
+    .postal-container, .reserva-casa, .minijuegos-container {
+        width: 95%; /* Ajustar contenedores al ancho de pantalla */
+        padding: 15px;
+    }
+
+    .postal-grid, .res-form {
+        display: flex; 
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+    .postal-img, .juego img, .casa {
+        width: 100%; 
+        height: auto;
+    }
+
+    .res-form input, .form-group input {
+        width: 100%; /* Inputs ocupan todo el ancho */
+        font-size: 1rem;
+    }
+
+    .postal-env {
+        font-size: 1rem; /* Botón enviar más pequeño */
+    }
+
+    #res-casa2 {
+        padding: 15px;
+    }
+
+    .reserva-casa2,
+    .res-info {
+        padding: 10px;
+    }
+
+    .postal-continue {
+        margin-top: 55%;
+    }
+
+    #dibujo-preview {
+        width: 100%; 
+        height: auto;
+    }
+
+    .postales-fin {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #calendario {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendario-text {
+    text-align: center; 
+    }
+
+    .calendario-wrapper {
+    width: 100%; 
+    }
+
+    .calendario-dias table {
+        width: 100%;
+        height: 300px
+    }
+
+    .calendario-dias {
+        margin-top: 97px;
+        
+    }
+
+    .reservas {
+    flex-direction: column; 
+    }
+    .res-botones {
+    flex-direction: row; 
+    }
+
+    .back-button {
+        top: 35%
+    }
+
+    .juegos-lista {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+    }
+    
+    .juego {
+    margin-bottom: 20px;
+    width: 200px; 
+    }
+
+    .mistletoe1, .mistletoe2 {
+        width: 150px;
+    }
+
+    .candy-cane, .candy-cane2 {
+        display: none;
+    }
+
+}
+
+/* Breakpoint para móvil (600px) */
+@media screen and (max-width: 600px) {
+    
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .imagen {
+        max-width: 90%;
+    }
+    .imagen h2 {
+        font-size: 0.9rem;
+    }
+    .galeria-container {
+        padding: 20px;
+    }
+    .modal-contenido {
+        width: 90%;
+    }
+    .calendario-wrapper {
+        max-width: 100%; 
+    }
+
+    .calendario-dias {
+        top: 14%; 
+        left: 3%;
+        width: 94%; 
+    }
+
+    .calendario-dias th,
+    .calendario-dias td {
+        font-size: 0.8rem; 
+        padding: 3px; 
+    }
+
+    /* Botones */
+    .back-button {
+        width: 150px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .postal-btn{
+        padding: 10px 20px;
+        font-size: 1.2rem;
+    }
+
+    /* Títulos */
+    .postal-title, .reserva-title {
+        font-size: 2.5rem; /* Títulos medianos */
+    }
+
+    .postal-subtitle, .res-casa-title {
+        font-size: 1.2rem;
+    }
+
+    /* Contenedores */
+    .postal-container, .reserva-casa, .minijuegos-container {
+        width: 90%; /* Contenedores más anchos */
+        padding: 20px;
+    }
+
+    .postal-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        gap: 20px;
+    }
+
+    .res-form {
+        grid-template-columns: 1fr 1fr; /* Formularios en dos columnas */
+        gap: 15px;
+    }
+
+    /* Imágenes */
+    .postal-img, .juego img, .casa {
+        width: 100%; /* Imágenes se ajustan */
+        height: auto;
+    }
+
+    .postal-continue {
+        margin-top: 88%;
+    }
+
+
+    .postal-header {
+        gap: 30px;
+    }
+    
+
+    #dibujo-preview {
+        width: 100%; 
+        height: auto;
+    }
+
+    .postales-fin {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #calendario {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendario-text {
+    text-align: center; 
+    }
+
+    .calendario-wrapper {
+    width: 100%; 
+    }
+
+    .calendario-dias table {
+        width: 92%;
+        height: 250px
+    }
+
+    .calendario-dias {
+        margin-top: 85px;
+        
+    }
+
+    .reservas {
+    flex-direction: column; 
+    }
+    .res-botones {
+    flex-direction: row; 
+    }
+
+    .back-button {
+        top: 40%
+    }
+
+    .juegos-lista {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+    }
+    
+    .juego {
+    margin-bottom: 20px;
+    width: 130px; 
+    }
+
+    .candy-cane, .candy-cane2 {
+        display: none;
+    }
+}
+
+
+/* -------------------------------------------Sección Home------------------------------------------- */
+@media (max-width: 768px) {
+    body {
+        padding-top: 250px;
+    }
+    html {
+        scroll-padding-top: 200px;
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar-links {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 columnas */
+        text-align: center;
+        margin-top: 10px;
+    }
+    .navbar-links a {
+        font-size: 1rem; 
+    }
+    .navbar-links li {
+        margin: 5px; 
+    }
+
+    .auth-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding-top: 15px;
+    }
+
+    .auth-btn {
+        width: calc(50% - 10px);
+        text-align: center;
+        font-size: 0.9rem; 
+    }
+
+    .home {
+        padding-top: 150px;
+        padding-bottom: 250px;
+        padding-right:20px;
+        background-position: center;
+        text-align: center;
+        height: auto;
+    }
+
+    .home h1 {
+        font-size: 2rem; 
+        margin-bottom: 10px;
+    }
+
+    .home p {
+        font-size: 1rem;
+        margin-bottom: 15px; 
+    }
+
+    .home button {
+        padding: 10px 20px; 
+        font-size: 1rem; 
+    }
+
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-top: 290px;
+    }
+    html {
+        scroll-padding-top: 270px;
+    }
+    .navbar-links {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px; 
+        text-align: center;
+    }
+    .navbar-links a {
+        font-size: 0.9rem; 
+    }
+    .auth-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        
+    }
+    .auth-btn {
+        width: calc(50% - 10px); 
+        text-align: center;
+        font-size: 0.9rem; 
+    }
+    .home {
+        margin-top: 10px;
+        padding-bottom: 150px;
+        padding-right:20px;
+        background-position: center;
+        text-align: center;
+        height: auto;
+
+    }
+    .home h1 {
+        font-size: 2rem;
+        margin-top: 75px;
+    }
+    p {
+        font-size: 1rem;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+/* -------------------------------------------Mapa------------------------------------------- */
+/* Breakpoint para Tablet (768px) */
+@media (max-width: 768px) {
+    .mapa-container {
+        width: 80%; /* Más pequeño para tabletas */
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .mapa-texto h1 {
+        font-size: 28px;
+        margin-top: 50px;
+    }
+
+    .mapa-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .tooltip {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .guirnalda{
+        top: 25%;
+        left: 90%;
+    }
+    .snowman{
+        top:80%;
+        left: 90%;
+    }
+    .trineo{
+        top: 25%;
+    }
+    .papa-noel-renos{
+        top:80%;
+        right: 100%;
+    }
+    .guirnalda,
+    .trineo,
+    .papa-noel-renos,
+    .snowman {
+        width: 60px; /* Reducir tamaño en pantallas pequeñas */
+    }
+}
+
+/* Breakpoint para Móvil (600px) */
+@media (max-width: 600px) {
+    .mapa-container {
+        padding-left: 70px;
+        padding-right: 50px;
+        width: 65%;
+    }
+
+    .mapa-texto h1 {
+        font-size: 22px;
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .mapa-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .point {
+        width: 10px;
+        height: 10px;
+    }
+
+    .tooltip {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+
+    .decoracion {
+        width: 80px;
+    }
+
+    .guirnalda{
+        top: 35%;
+        right: 5%;
+        left: 92%;
+    }
+    .snowman{
+        top:80%;
+        right: 5%;
+        left: 92%;
+    }
+    .trineo{
+        top: 35%;
+    }
+    .papa-noel-renos{
+        top:80%;
+        right: 100%;
+    }
+    .guirnalda,
+    .trineo,
+    .papa-noel-renos,
+    .snowman {
+        width: 50px; /* Reducir tamaño en pantallas pequeñas */
+    }
+}
+
+/* -------------------------------------------Historia de papá Noel------------------------------------------- */
+
+/* Breakpoint para tablet (768px) */
+@media (max-width: 768px) {
+    .historia-container {
+        padding: 30px;
+    }
+
+    .left-decoracion,
+    .right-decoracion {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        flex-direction: row;
+        gap: 170px; 
+        justify-content: center; 
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .bola-navidad {
+        width: 100px;
+        height: 100px;
+    }
+
+    .historia-texto h1 {
+        font-size: 30px; /* Ajustar tamaño de la cabecera */
+    }
+
+    .videos {
+        flex-direction: column; /* Hacer que los videos se apilen en columna en tablet */
+    }
+
+    .video {
+        width: 100%;
+    }
+}
+
+/* Breakpoint para móvil (600px) */
+@media (max-width: 600px) {
+    .historia-container {
+        padding: 20px;
+    }
+
+    .left-decoracion,
+    .right-decoracion {
+        flex-direction: row; 
+        gap: 120px; 
+        justify-content: center;
+    }
+
+    .bola-navidad {
+        width: 70px; 
+        height: 70px;
+        padding: 0 10;
+    }
+
+    .historia-texto h1 {
+        font-size: 24px; 
+    }
+    .videos {
+        flex-direction: column; /* Asegurarse de que los videos estén en columna */
+        gap: 15px;
+    }
+
+    .video {
+        width: 100%;
+    }
+}
+
+/* -------------------------------------------Carta------------------------------------------- */
+@media (max-width: 768px) {
+    .carta-container {
+        width:70%;
+        padding: 10px;
+        margin: 10px, 50px;
+    }
+
+    .titulo-carta {
+        flex-direction:row;
+        gap: 30px;
+    }
+
+    .titulo-carta h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .titulo-img-carta {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-form {
+        grid-template-columns: 0.5fr;
+        gap: 5px;
+    }
+
+    .contact-form button {
+        font-size: 1.4rem;
+        margin-top: 10px;
+    }
+
+    .left-decor-carta {
+        left: -80px;
+        top: 80%;
+    }
+
+    .right-decor-carta {
+        right: -50px;
+    }
+
+    .arbol-santa,
+    .snowflake {
+        width: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carta-container {
+        width: 80%;
+        margin: 10px, 50px;
+        padding: 10px;
+    }
+
+    .titulo-carta h1 {
+        font-size: 24px;
+    }
+
+    .titulo-img-carta {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact-form {
+        grid-template-columns: 0.5fr;
+        gap: 10px;
+    }
+
+    .contact-form label {
+        font-size: 1.5rem;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form textarea {
+        font-size: 1rem;
+    }
+
+    .contact-form button {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+    }
+
+    .left-decor-carta {
+        left: -50px;
+        top: 85%;
+    }
+
+    .right-decor-carta {
+        right: -30px;
+    }
+
+    .arbol-santa,
+    .snowflake {
+        width: 50px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .minijuegos-container {
+        padding: 60px 15px;
+        margin-top: 80px;
+    }
+
+    .minijuegos-container h1 {
+        font-size: 3rem;
+    }
+
+    .minijuegos-container p {
+        font-size: 1.2rem;
+    }
+
+    .minijuegos-slider {
+        padding: 10px;
+    }
+
+    .juegos-lista {
+        flex-direction: column;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;  /* Asegura que los juegos estén centrados también en vertical */
+    }
+
+    .mistletoe1, .mistletoe2 {
+        width: 130px;
+    }
+
+    .santaball, .santagift {
+        width: 130px;
+        top:1300px;
+    }
+}
+
+/* Respuesta para pantallas con un ancho máximo de 600px (Móvil) */
+@media (max-width: 600px) {
+    .minijuegos-container {
+        padding: 40px 10px;
+        margin-top: 60px;
+     
+    }
+
+    .minijuegos-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .minijuegos-container p {
+        font-size: 1rem;
+    }
+
+    .minijuegos-slider {
+        padding: 5px;
+    }
+
+    .mistletoe1, .mistletoe2 {
+        width: 100px;
+        display: none;
+    }
+
+    .santaball, .santagift {
+        width: 100px;
+        top:950px;
+    }
+}
+
+
+/*-----------------------------------------------Responsive juegos------------------------------------------------------------------------*/
+/* Media Query para tablet (768px) */
+@media (max-width: 768px) { 
+    .juego-titulo h2 {
+        font-size: 1.8rem; 
+        text-align: center;
+        margin-top: 15px; /
+    }
+    .juego-titulo {
+        flex-direction: row; 
+        align-items: center;
+        justify-content: center;
+    }
+    .juego-content {
+        flex-direction: row;  
+        align-items: center; 
+        justify-content: space-between; 
+    }
+
+    /* Ajustar la imagen */
+    .juego2-img {
+        width: 80%; 
+        height: auto;
+    }
+
+    .santa-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .decoracion-juego {
+        gap: 15px;
+    }
+
+    .decoracion-gift {
+        width: 70px; 
+    }
+
+    #tree {
+        width: 250px; 
+        height: 400px;
+    }
+
+    #decorations-container {
+        grid-template-columns: repeat(2, 40px); 
+    }
+
+    .decoration {
+        width: 40px; 
+        height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajuste en el título */
+    .juego-titulo h2 {
+        font-size: 1rem; 
+        text-align: center;
+        margin-top: 20px;
+        
+    }
+
+    .juego-titulo {
+        flex-direction: row; 
+        align-items: center;
+        justify-content: center;
+    }
+    .decorations h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px; 
+    }
+
+    .juego-content {
+        flex-direction: row; 
+        align-items: center;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .juego2-img {
+        width: 100%; 
+        height: auto;
+    }
+
+    .santa-icon {
+        width: 70px; 
+        height: 70px;
+    }
+
+    .decoracion-juego {
+        gap: 5px; 
+        top: 0;
+    }
+
+    .decoracion-gift {
+        width: 60px;
+    }
+    #tree {
+        width: 250px;
+        height: 400px;
+    }
+    
+    #decorations-container {
+        grid-template-columns: repeat(1, 30px); 
+    }
+    
+    .decoration {
+        width: 30px; 
+        height: 30px;
+    }
+}
+
+
