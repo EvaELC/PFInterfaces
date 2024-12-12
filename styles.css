@@ -2320,8 +2320,14 @@ tree-area {
     }
 
     .postal-continue {
-        margin-top: 55%;
+        margin-top: 70%;
     }
+
+
+    .postal-header {
+        gap: 30px;
+    }
+    
 
     #dibujo-preview {
         width: 100%; 
@@ -2349,12 +2355,12 @@ tree-area {
     }
 
     .calendario-dias table {
-        width: 100%;
-        height: 300px
+        width: 92%;
+        height: 250px
     }
 
     .calendario-dias {
-        margin-top: 97px;
+        margin-top: 85px;
         
     }
 
@@ -2366,7 +2372,7 @@ tree-area {
     }
 
     .back-button {
-        top: 30%
+        top: 35%
     }
 
     .juegos-lista {
